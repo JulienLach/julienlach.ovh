@@ -37,7 +37,7 @@ function readingTime(body: string | undefined) {
 					<strong>Julien Lach</strong>
 					<span class="handle">@JulienLach</span>
 					<span class="title">Software Developer</span>
-					<span class="stack">Building web applications for business — organization, workflow, and digital transformation.</span>
+					<span class="stack">Building web applications that help businesses run better — tools, workflows, and automation.</span>
 					<span class="stack">France</span>
 					<div class="social">
 						<a href="https://github.com/JulienLach" target="_blank" rel="noopener" aria-label="GitHub">
@@ -66,7 +66,10 @@ function readingTime(body: string | undefined) {
 							<h2>{post.data.title}</h2>
 						</a>
 						<p class="meta">
-							Published: {formatDate(post.data.pubDate)}
+							<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+								<rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/>
+							</svg>
+							{formatDate(post.data.pubDate)}
 							{post.body && <span> · {readingTime(post.body)}</span>}
 						</p>
 						{post.data.description && (
@@ -108,7 +111,7 @@ function readingTime(body: string | undefined) {
 	}
 	.social {
 		display: flex;
-		gap: 0.8rem;
+		gap: 0.6rem;
 		margin-top: 0.4rem;
 	}
 	.social a {
@@ -140,6 +143,9 @@ function readingTime(body: string | undefined) {
 		opacity: 0.75;
 	}
 	.meta {
+		display: flex;
+		align-items: center;
+		gap: 0.3rem;
 		color: var(--dim);
 		font-size: 0.85em;
 		margin: 0 0 0.4rem;
