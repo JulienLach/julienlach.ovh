@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
@@ -63,7 +62,7 @@ function readingTime(body: string | undefined) {
 			<section class="posts">
 				{posts.map((post) => (
 					<article>
-						<a href={`/blog/${post.id}/`}>
+						<a href={`/posts/${post.id}/`}>
 							<h2>{post.data.title}</h2>
 						</a>
 						<p class="meta">
@@ -77,7 +76,6 @@ function readingTime(body: string | undefined) {
 				))}
 			</section>
 		</main>
-		<Footer />
 	</body>
 </html>
 
