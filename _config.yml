@@ -1,0 +1,5 @@
+title: Julien Lach
+url: "https://julienlach.ovh"
+baseurl: ""
+theme: minima
+permalink: /:year/:month/:day/:title/
