@@ -1,0 +1,138 @@
+:root {
+    --bg: #1f2630;
+    --fg: #cccccc;
+    --dim: #dadada;
+    --accent: #00b4d8;
+    --border: #4d4d4d;
+}
+
+:root[data-theme="light"] {
+    --bg: #fafafa;
+    --fg: #1a1a1a;
+    --dim: #5a5a5a;
+    --accent: #0096c7;
+    --border: #e0e0e0;
+}
+
+::selection {
+    background: #00b4d8;
+    color: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+    background: var(--bg);
+    color: var(--fg);
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0.5rem 1.5rem 4rem;
+}
+
+a {
+    color: var(--fg);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--dim);
+}
+
+a:hover {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    font-size: 1em;
+    margin: 0 0 0.5rem;
+    color: var(--fg);
+    line-height: 1.4;
+}
+
+p {
+    margin: 0 0 1em;
+}
+
+strong,
+b {
+    color: #8f8f8f;
+}
+
+ul,
+ol {
+    padding-left: 1.5em;
+    margin: 0 0 1em;
+}
+
+code {
+    background: #1c1c1c;
+    padding: 0.15em 0.4em;
+    font-size: 0.9em;
+    border-radius: 2px;
+}
+
+pre {
+    background: #1c1c1c;
+    padding: 1em 1.2em;
+    overflow-x: auto;
+    margin: 0 0 1em;
+    border-left: 2px solid var(--border);
+}
+
+pre > code {
+    background: none;
+    padding: 0;
+    font-size: 1em;
+}
+
+blockquote {
+    border-left: 2px solid var(--border);
+    margin: 0 0 1em;
+    padding: 0 0 0 1em;
+    color: var(--dim);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 0.4em 0.8em;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    color: var(--dim);
+    font-weight: normal;
+}

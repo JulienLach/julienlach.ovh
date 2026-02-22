@@ -1,0 +1,52 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="About — Julien Lach" description="About Julien Lach" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>About</h1>
+
+			<p>
+				I'm a software developer based in France, focused on building web applications that solve real business problems — organization, workflow, and digital transformation.
+			</p>
+
+			<p>
+				I work mainly with JavaScript, Node.js, React, and PostgreSQL. I'm drawn to practical tools that make day-to-day work less painful, especially for teams and companies going through digitalization.
+			</p>
+
+			<p>
+				Currently working at Alternatives Conseil Assistance Industrie.
+			</p>
+
+			<h2>GitHub</h2>
+
+			<p>
+				Always happy to collaborate or talk about code.
+			</p>
+
+			<p>
+				<a href="https://github.com/JulienLach" target="_blank" rel="noopener">Follow me on GitHub →</a>
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	h1 {
+		margin-bottom: 1.5rem;
+	}
+	h2 {
+		margin-top: 2rem;
+		margin-bottom: 0.5rem;
+		color: var(--dim);
+	}
+</style>

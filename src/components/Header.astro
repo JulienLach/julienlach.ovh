@@ -1,0 +1,87 @@
+---
+---
+
+<header>
+	<a href="/" class="home">Julien Lach</a>
+	<nav>
+		<a href="/">Posts</a>
+		<a href="/about">About</a>
+		<button id="theme-toggle" aria-label="Toggle theme">
+			<!-- Sun: visible in dark mode -->
+			<svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+				<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+			</svg>
+			<!-- Moon: visible in light mode -->
+			<svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+				<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+			</svg>
+		</button>
+	</nav>
+</header>
+
+<script>
+  const btn = document.getElementById('theme-toggle');
+  const root = document.documentElement;
+
+  btn?.addEventListener('click', () => {
+    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = next;
+    localStorage.setItem('theme', next);
+  });
+</script>
+
+<style>
+	header {
+		max-width: 680px;
+		margin: 0 auto;
+		padding: 1.5rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+	}
+	header::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 1.5rem;
+		right: 1.5rem;
+		border-bottom: 1px solid var(--border);
+	}
+	.home {
+		text-decoration: none;
+		color: var(--fg);
+		font-weight: normal;
+	}
+	.home:hover {
+		color: var(--accent);
+	}
+	nav {
+		display: flex;
+		gap: 1.5rem;
+		align-items: center;
+	}
+	nav a {
+		text-decoration: none;
+		color: var(--dim);
+		line-height: 1;
+	}
+	nav a:hover {
+		color: var(--fg);
+	}
+	#theme-toggle {
+		background: none;
+		border: none;
+		color: var(--dim);
+		cursor: pointer;
+		padding: 0;
+		display: flex;
+		align-items: center;
+	}
+	#theme-toggle:hover {
+		color: var(--fg);
+	}
+
+	:global(:root[data-theme="dark"]) #icon-moon { display: none; }
+	:global(:root[data-theme="light"]) #icon-sun  { display: none; }
+</style>

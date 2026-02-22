@@ -1,0 +1,73 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, pubDate, updatedDate } = Astro.props;
+
+function formatDate(date: Date) {
+	return date.toISOString().slice(0, 10);
+}
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<article>
+				<header>
+					<a href="/" class="back">← index</a>
+					<h1>{title}</h1>
+					<time>{formatDate(pubDate)}</time>
+					{updatedDate && <span class="updated"> · mis à jour le {formatDate(updatedDate)}</span>}
+				</header>
+				<hr />
+				<div class="prose">
+					<slot />
+				</div>
+			</article>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	article header {
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+		margin-bottom: 1.5rem;
+	}
+	.back {
+		color: var(--dim);
+		text-decoration: none;
+		font-size: 0.85em;
+		margin-bottom: 0.5rem;
+	}
+	.back:hover {
+		color: var(--fg);
+	}
+	h1 {
+		font-size: 1em;
+		font-weight: normal;
+		margin: 0;
+		color: var(--accent);
+	}
+	time {
+		color: var(--dim);
+		font-size: 0.85em;
+	}
+	.updated {
+		color: var(--dim);
+		font-size: 0.85em;
+	}
+	.prose {
+		margin-top: 1.5rem;
+	}
+</style>
