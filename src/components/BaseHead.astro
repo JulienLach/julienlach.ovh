@@ -12,6 +12,7 @@ const { title, description } = Astro.props;
 ---
 
 <meta charset="utf-8" />
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/cascadia-code@latest/index.css" rel="stylesheet" />
 <script is:inline>
   const saved = localStorage.getItem('theme');
   const preferred = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
