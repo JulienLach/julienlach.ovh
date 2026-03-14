@@ -1,12 +1,13 @@
 ---
+const { pathname } = Astro.url;
 ---
 
 <header>
 	<a href="/" class="home">Julien Lach</a>
 	<nav>
-		<a href="/">Posts</a>
-		<a href="/projects">Projects</a>
-		<a href="/about">About</a>
+		<a href="/" class={pathname === '/' ? 'active' : ''}>Posts</a>
+		<a href="/projects" class={pathname.startsWith('/projects') ? 'active' : ''}>Projects</a>
+		<a href="/about" class={pathname.startsWith('/about') ? 'active' : ''}>About</a>
 		<button id="theme-toggle" aria-label="Toggle theme">
 			<!-- Sun: visible in dark mode -->
 			<svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -68,6 +69,9 @@
 		line-height: 1;
 	}
 	nav a:hover {
+		color: var(--accent);
+	}
+	nav a.active {
 		color: var(--accent);
 	}
 	#theme-toggle {

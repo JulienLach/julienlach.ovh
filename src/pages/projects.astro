@@ -8,6 +8,17 @@ import meetlog1Img from '../assets/images/meetlog1.png';
 import meetlog2Img from '../assets/images/meetlog2.png';
 import meetlog3Img from '../assets/images/meetlog3.png';
 import meetlog4Img from '../assets/images/meetlog4.png';
+import ficheqs1Img from '../assets/images/ficheqs1.png';
+import ficheqs2Img from '../assets/images/ficheqs2.png';
+import ficheqs3Img from '../assets/images/ficheqs3.png';
+import ficheqs4Img from '../assets/images/ficheqs4.png';
+import effitech1Img from '../assets/images/effitech1.png';
+import effitech2Img from '../assets/images/effitech2.png';
+import effitech3Img from '../assets/images/effitech3.png';
+import effitechmobile1Img from '../assets/images/effitechmobile1.png';
+import effitechmobile2Img from '../assets/images/effitechmobile2.png';
+import effitechmobile3Img from '../assets/images/effitechmobile3.png';
+import effitechmobile4Img from '../assets/images/effitechmobile4.png';
 ---
 
 <!doctype html>
@@ -23,8 +34,8 @@ import meetlog4Img from '../assets/images/meetlog4.png';
 			<ul class="project-list">
 				<li class="project-card">
 					<div class="project-screenshots-row">
-						<Image src={mocklifyImg} alt="Mocklify screenshot" class="project-screenshot-desktop" />
-						<Image src={mocklify2Img} alt="Mocklify screenshot 2" class="project-screenshot-desktop" />
+						<div class="screenshot-wrap"><Image src={mocklifyImg} alt="Mocklify screenshot" class="project-screenshot-desktop" /></div>
+						<div class="screenshot-wrap"><Image src={mocklify2Img} alt="Mocklify screenshot 2" class="project-screenshot-desktop" /></div>
 					</div>
 					<div class="project-header">
 						<span class="project-name">Mocklify</span>
@@ -42,10 +53,10 @@ import meetlog4Img from '../assets/images/meetlog4.png';
 				</li>
 				<li class="project-card">
 					<div class="project-screenshots-row">
-                        <Image src={meetlog2Img} alt="MeetLog screenshot 2" class="project-screenshot-mobile" />
-                        <Image src={meetlog3Img} alt="MeetLog screenshot 3" class="project-screenshot-mobile" />
-						<Image src={meetlog1Img} alt="MeetLog screenshot 1" class="project-screenshot-mobile" />
-						<Image src={meetlog4Img} alt="MeetLog screenshot 4" class="project-screenshot-mobile" />
+						<div class="screenshot-wrap"><Image src={meetlog2Img} alt="MeetLog screenshot 2" class="project-screenshot-mobile" /></div>
+						<div class="screenshot-wrap"><Image src={meetlog3Img} alt="MeetLog screenshot 3" class="project-screenshot-mobile" /></div>
+						<div class="screenshot-wrap"><Image src={meetlog1Img} alt="MeetLog screenshot 1" class="project-screenshot-mobile" /></div>
+						<div class="screenshot-wrap"><Image src={meetlog4Img} alt="MeetLog screenshot 4" class="project-screenshot-mobile" /></div>
 					</div>
 					<div class="project-header">
 						<span class="project-name">MeetLog</span>
@@ -63,11 +74,17 @@ import meetlog4Img from '../assets/images/meetlog4.png';
 					</div>
 				</li>
 				<li class="project-card">
+					<div class="project-screenshots-row">
+						<div class="screenshot-wrap"><Image src={ficheqs1Img} alt="FicheQS screenshot 1" class="project-screenshot-mobile" /></div>
+						<div class="screenshot-wrap"><Image src={ficheqs4Img} alt="FicheQS screenshot 4" class="project-screenshot-mobile" /></div>
+						<div class="screenshot-wrap"><Image src={ficheqs3Img} alt="FicheQS screenshot 3" class="project-screenshot-mobile" /></div>
+						<div class="screenshot-wrap"><Image src={ficheqs2Img} alt="FicheQS screenshot 2" class="project-screenshot-mobile" /></div>
+					</div>
 					<div class="project-header">
 						<span class="project-name">FicheQS</span>
 						<span class="project-status wip">Not deployed</span>
 					</div>
-					<p class="project-desc">Fullstack PWA for digitizing quality and safety forms used in the real estate industry. Create, validate, and send forms as PDF — from desktop or mobile.</p>
+					<p class="project-desc">Mobile-first PWA for digitizing quality and safety forms used in the real estate industry. Fill, validate, and send forms as PDF by email — on the go.</p>
 					<div class="project-footer">
 						<ul class="project-tags">
 							<li>React</li>
@@ -79,6 +96,17 @@ import meetlog4Img from '../assets/images/meetlog4.png';
 					</div>
 				</li>
 				<li class="project-card">
+					<div class="project-screenshots-row">
+						<div class="screenshot-wrap"><Image src={effitech1Img} alt="EffiTech screenshot 1" class="project-screenshot-desktop" /></div>
+						<div class="screenshot-wrap"><Image src={effitech2Img} alt="EffiTech screenshot 2" class="project-screenshot-desktop" /></div>
+						<div class="screenshot-wrap"><Image src={effitech3Img} alt="EffiTech screenshot 3" class="project-screenshot-desktop" /></div>
+					</div>
+					<div class="project-screenshots-row">
+						<div class="screenshot-wrap"><Image src={effitechmobile4Img} alt="EffiTech mobile screenshot 4" class="project-screenshot-mobile" /></div>
+						<div class="screenshot-wrap"><Image src={effitechmobile1Img} alt="EffiTech mobile screenshot 1" class="project-screenshot-mobile" /></div>
+						<div class="screenshot-wrap"><Image src={effitechmobile3Img} alt="EffiTech mobile screenshot 3" class="project-screenshot-mobile" /></div>
+						<div class="screenshot-wrap"><Image src={effitechmobile2Img} alt="EffiTech mobile screenshot 2" class="project-screenshot-mobile" /></div>
+					</div>
 					<div class="project-header">
 						<span class="project-name">EffiTech</span>
 						<span class="project-status wip">Not deployed</span>
@@ -96,8 +124,39 @@ import meetlog4Img from '../assets/images/meetlog4.png';
 				</li>
 			</ul>
 		</main>
+		<div id="lightbox">
+			<img id="lightbox-img" src="" alt="" />
+		</div>
 	</body>
 </html>
+
+<script>
+	const lightbox = document.getElementById('lightbox');
+	const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+
+	document.querySelectorAll('.screenshot-wrap').forEach(wrap => {
+		wrap.addEventListener('click', () => {
+			const img = wrap.querySelector('img') as HTMLImageElement;
+			lightboxImg.src = img.src;
+			lightboxImg.alt = img.alt;
+			lightbox?.classList.add('open');
+			requestAnimationFrame(() => {
+				requestAnimationFrame(() => lightbox?.classList.add('visible'));
+			});
+		});
+	});
+
+	function closeLightbox() {
+		lightbox?.classList.remove('visible');
+		setTimeout(() => lightbox?.classList.remove('open'), 200);
+	}
+
+	lightbox?.addEventListener('click', closeLightbox);
+
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape') closeLightbox();
+	});
+</script>
 
 <style>
 	h1 {
@@ -113,20 +172,68 @@ import meetlog4Img from '../assets/images/meetlog4.png';
 		gap: 1.5rem;
 	}
 	.project-screenshot-desktop {
-		flex: 1;
-		width: 0;
-		height: auto;
-		border-radius: 4px;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 		display: block;
+	}
+	.screenshot-wrap:has(.project-screenshot-desktop) {
+		aspect-ratio: 16/10;
 	}
 	.project-screenshots-row {
 		display: flex;
 		gap: 0.5rem;
 		margin-bottom: 1rem;
 	}
-	.project-screenshot-mobile {
+	.screenshot-wrap {
 		flex: 1;
 		width: 0;
+		position: relative;
+		overflow: hidden;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+	.screenshot-wrap img {
+		width: 100%;
+		height: auto;
+		display: block;
+		transition: transform 0.2s ease;
+	}
+	.screenshot-wrap:hover img {
+		transform: scale(1.04);
+	}
+	.screenshot-wrap::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: rgba(0,0,0,0);
+		transition: background 0.2s ease;
+	}
+	.screenshot-wrap:hover::after {
+		background: rgba(0,0,0,0.12);
+	}
+	.screenshot-wrap::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 28px;
+		height: 28px;
+		transform: translate(-50%, -50%) scale(0.7);
+		opacity: 0;
+		transition: opacity 0.2s ease, transform 0.2s ease;
+		z-index: 1;
+		pointer-events: none;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C%2Fsvg%3E");
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+	.screenshot-wrap:hover::before {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+	.project-screenshot-mobile {
+		width: 100%;
 		height: auto;
 		border-radius: 4px;
 		display: block;
@@ -205,5 +312,34 @@ import meetlog4Img from '../assets/images/meetlog4.png';
 	.project-link:hover {
 		color: var(--accent);
 		border-color: var(--accent);
+	}
+	#lightbox {
+		display: none;
+		position: fixed;
+		inset: 0;
+		background: rgba(0,0,0,0.85);
+		z-index: 999;
+		align-items: center;
+		justify-content: center;
+		cursor: zoom-out;
+		opacity: 0;
+		transition: opacity 0.2s ease;
+	}
+	#lightbox.open {
+		display: flex;
+	}
+	#lightbox.visible {
+		opacity: 1;
+	}
+	#lightbox img {
+		max-width: 90vw;
+		max-height: 90vh;
+		border-radius: 6px;
+		object-fit: contain;
+		transform: scale(0.92);
+		transition: transform 0.2s ease;
+	}
+	#lightbox.visible img {
+		transform: scale(1);
 	}
 </style>
