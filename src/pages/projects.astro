@@ -1,0 +1,183 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import { Image } from 'astro:assets';
+import mocklifyImg from '../assets/images/mocklify.png';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Projects — Julien Lach" description="Projects by Julien Lach" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Projects</h1>
+
+			<ul class="project-list">
+				<li class="project-card">
+					<Image src={mocklifyImg} alt="Mocklify screenshot" class="project-screenshot" />
+					<div class="project-header">
+						<span class="project-name">Mocklify</span>
+						<span class="project-status live">Live</span>
+					</div>
+					<p class="project-desc">Turn screenshots into simple mockups. Add a macOS window frame, background, and shadow — right in your browser. No Photoshop, no account, no upload.</p>
+					<div class="project-footer">
+						<ul class="project-tags">
+							<li>Browser tool</li>
+							<li>100% private</li>
+							<li>PNG export</li>
+						</ul>
+						<a href="https://mocklify.ovh" target="_blank" rel="noopener" class="project-link">View →</a>
+					</div>
+				</li>
+				<li class="project-card">
+					<div class="project-header">
+						<span class="project-name">MeetLog</span>
+						<span class="project-status wip">Not deployed</span>
+					</div>
+					<p class="project-desc">Record, transcribe, and summarize sprint meetings and stand-ups in real-time with AI. Whisper.cpp for offline transcription, Ollama for local LLM summaries.</p>
+					<div class="project-footer">
+						<ul class="project-tags">
+							<li>React Native</li>
+							<li>Node.js</li>
+							<li>Whisper.cpp</li>
+							<li>Ollama</li>
+						</ul>
+						<a href="https://github.com/JulienLach/MeetLog" target="_blank" rel="noopener" class="project-link">GitHub →</a>
+					</div>
+				</li>
+				<li class="project-card">
+					<div class="project-header">
+						<span class="project-name">FicheQS</span>
+						<span class="project-status wip">Not deployed</span>
+					</div>
+					<p class="project-desc">Fullstack PWA for digitizing quality and safety forms used in the real estate industry. Create, validate, and send forms as PDF — from desktop or mobile.</p>
+					<div class="project-footer">
+						<ul class="project-tags">
+							<li>React</li>
+							<li>Node.js</li>
+							<li>PostgreSQL</li>
+							<li>PWA</li>
+						</ul>
+						<a href="https://github.com/JulienLach/FicheQS" target="_blank" rel="noopener" class="project-link">GitHub →</a>
+					</div>
+				</li>
+				<li class="project-card">
+					<div class="project-header">
+						<span class="project-name">EffiTech</span>
+						<span class="project-status wip">Not deployed</span>
+					</div>
+					<p class="project-desc">Field service management PWA for scheduling technician interventions, managing clients and employees, and generating signed reports with technical documents.</p>
+					<div class="project-footer">
+						<ul class="project-tags">
+							<li>React</li>
+							<li>Node.js</li>
+							<li>PostgreSQL</li>
+							<li>Docker</li>
+						</ul>
+						<a href="https://github.com/JulienLach/EffiTech" target="_blank" rel="noopener" class="project-link">GitHub →</a>
+					</div>
+				</li>
+			</ul>
+		</main>
+	</body>
+</html>
+
+<style>
+	h1 {
+		margin-top: 1rem;
+		margin-bottom: 1.5rem;
+	}
+	.project-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+	.project-screenshot {
+		width: 100%;
+		height: auto;
+		border-radius: 4px;
+		margin-bottom: 1rem;
+		display: block;
+	}
+	.project-card {
+		border: 1px solid var(--border);
+		border-radius: 6px;
+		padding: 1rem 1.2rem;
+		transition: border-color 0.15s, box-shadow 0.15s;
+	}
+	.project-card:hover {
+		border-color: var(--accent);
+		box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+	}
+	.project-header {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		margin-bottom: 0.4rem;
+	}
+	.project-name {
+		font-weight: 500;
+		color: var(--fg);
+	}
+	.project-status {
+		font-size: 0.75em;
+		border-radius: 99px;
+		padding: 0.1em 0.55em;
+		line-height: 1.6;
+	}
+	.project-status.live {
+		color: #4ade80;
+		border: 1px solid #4ade8044;
+	}
+	.project-status.wip {
+		color: #fb923c;
+		border: 1px solid #fb923c44;
+	}
+	.project-desc {
+		color: var(--dim);
+		font-size: 0.95em;
+		margin: 0 0 0.75rem;
+		line-height: 1.6;
+	}
+	.project-footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+	.project-tags {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+	.project-tags li {
+		font-size: 0.8em;
+		color: var(--dim);
+		border: 1px solid var(--border);
+		border-radius: 4px;
+		padding: 0.15em 0.5em;
+	}
+	.project-link {
+		font-size: 0.8em;
+		text-decoration: none;
+		color: var(--dim);
+		border: 1px solid var(--border);
+		border-radius: 4px;
+		padding: 0.15em 0.5em;
+		white-space: nowrap;
+		margin-left: auto;
+	}
+	.project-link:hover {
+		color: var(--accent);
+		border-color: var(--accent);
+	}
+</style>
