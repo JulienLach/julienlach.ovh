@@ -3,6 +3,11 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import { Image } from 'astro:assets';
 import mocklifyImg from '../assets/images/mocklify.png';
+import mocklify2Img from '../assets/images/mocklify2.png';
+import meetlog1Img from '../assets/images/meetlog1.png';
+import meetlog2Img from '../assets/images/meetlog2.png';
+import meetlog3Img from '../assets/images/meetlog3.png';
+import meetlog4Img from '../assets/images/meetlog4.png';
 ---
 
 <!doctype html>
@@ -17,7 +22,10 @@ import mocklifyImg from '../assets/images/mocklify.png';
 
 			<ul class="project-list">
 				<li class="project-card">
-					<Image src={mocklifyImg} alt="Mocklify screenshot" class="project-screenshot" />
+					<div class="project-screenshots-row">
+						<Image src={mocklifyImg} alt="Mocklify screenshot" class="project-screenshot-desktop" />
+						<Image src={mocklify2Img} alt="Mocklify screenshot 2" class="project-screenshot-desktop" />
+					</div>
 					<div class="project-header">
 						<span class="project-name">Mocklify</span>
 						<span class="project-status live">Live</span>
@@ -33,9 +41,15 @@ import mocklifyImg from '../assets/images/mocklify.png';
 					</div>
 				</li>
 				<li class="project-card">
+					<div class="project-screenshots-row">
+                        <Image src={meetlog2Img} alt="MeetLog screenshot 2" class="project-screenshot-mobile" />
+                        <Image src={meetlog3Img} alt="MeetLog screenshot 3" class="project-screenshot-mobile" />
+						<Image src={meetlog1Img} alt="MeetLog screenshot 1" class="project-screenshot-mobile" />
+						<Image src={meetlog4Img} alt="MeetLog screenshot 4" class="project-screenshot-mobile" />
+					</div>
 					<div class="project-header">
 						<span class="project-name">MeetLog</span>
-						<span class="project-status wip">Not deployed</span>
+						<span class="project-status wip">Work in progress</span>
 					</div>
 					<p class="project-desc">Record, transcribe, and summarize sprint meetings and stand-ups in real-time with AI. Whisper.cpp for offline transcription, Ollama for local LLM summaries.</p>
 					<div class="project-footer">
@@ -98,11 +112,23 @@ import mocklifyImg from '../assets/images/mocklify.png';
 		flex-direction: column;
 		gap: 1.5rem;
 	}
-	.project-screenshot {
-		width: 100%;
+	.project-screenshot-desktop {
+		flex: 1;
+		width: 0;
 		height: auto;
 		border-radius: 4px;
+		display: block;
+	}
+	.project-screenshots-row {
+		display: flex;
+		gap: 0.5rem;
 		margin-bottom: 1rem;
+	}
+	.project-screenshot-mobile {
+		flex: 1;
+		width: 0;
+		height: auto;
+		border-radius: 4px;
 		display: block;
 	}
 	.project-card {
