@@ -5,8 +5,7 @@ const { pathname } = Astro.url;
 <header>
 	<a href="/" class="home">Julien Lach</a>
 	<nav>
-		<a href="/" class={pathname === '/' ? 'active' : ''}>Posts</a>
-		<a href="/projects" class={pathname.startsWith('/projects') ? 'active' : ''}>Projects</a>
+		<a href="/" class={pathname === '/' ? 'active' : ''}>Projects</a>
 		<a href="/about" class={pathname.startsWith('/about') ? 'active' : ''}>About</a>
 		<button id="theme-toggle" aria-label="Toggle theme">
 			<!-- Sun: visible in dark mode -->

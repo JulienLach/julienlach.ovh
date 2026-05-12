@@ -1,28 +1,40 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
-
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
-
-function formatDate(date: Date) {
-	return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-}
-
-function readingTime(body: string | undefined) {
-	if (!body) return '1 min read';
-	const words = body.trim().split(/\s+/).length;
-	return `${Math.max(1, Math.ceil(words / 200))} min read`;
-}
+import { Image } from 'astro:assets';
+import mocklifyImg from '../assets/images/mocklify.png';
+import mocklify2Img from '../assets/images/mocklify2.png';
+import meetlog1Img from '../assets/images/meetlog1.png';
+import meetlog2Img from '../assets/images/meetlog2.png';
+import meetlog3Img from '../assets/images/meetlog3.png';
+import meetlog4Img from '../assets/images/meetlog4.png';
+import ficheqs1Img from '../assets/images/ficheqs1.png';
+import ficheqs2Img from '../assets/images/ficheqs2.png';
+import ficheqs3Img from '../assets/images/ficheqs3.png';
+import ficheqs4Img from '../assets/images/ficheqs4.png';
+import effitech1Img from '../assets/images/effitech1.png';
+import effitech2Img from '../assets/images/effitech2.png';
+import effitech3Img from '../assets/images/effitech3.png';
+import effitechmobile1Img from '../assets/images/effitechmobile1.png';
+import effitechmobile2Img from '../assets/images/effitechmobile2.png';
+import effitechmobile3Img from '../assets/images/effitechmobile3.png';
+import effitechmobile4Img from '../assets/images/effitechmobile4.png';
+import axelormcp1Img from '../assets/images/axelor_mcp1.png';
+import axelormcp2Img from '../assets/images/axelor_mcp2.png';
+import audit1Img from '../assets/images/audit_1-portrait.png';
+import audit2Img from '../assets/images/audit_2-portrait.png';
+import audit3Img from '../assets/images/audit_3-portrait.png';
+import audit4Img from '../assets/images/audit_4-portrait.png';
+import blacksygnus1Img from '../assets/images/blacksygnus_1.png';
+import blacksygnus2Img from '../assets/images/blacksygnus_2.png';
+import et2i1Img from '../assets/images/et2i_1.png';
+import et2i2Img from '../assets/images/et2i_2.png';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title="Projects — Julien Lach" description="Projects by Julien Lach" />
 	</head>
 	<body>
 		<Header />
@@ -56,101 +68,204 @@ function readingTime(body: string | undefined) {
 					</div>
 				</div>
 			</section>
-
-			<section class="posts">
-				{posts.map((post) => (
-					<article>
-						<a href={`/posts/${post.id}/`}>
-							<h2>{post.data.title}</h2>
-						</a>
-						<p class="meta">
-							<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-								<rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/>
-							</svg>
-							{formatDate(post.data.pubDate)}
-							{post.body && <span> · {readingTime(post.body)}</span>}
-						</p>
-						{post.data.description && (
-							<p class="description">{post.data.description}</p>
-						)}
-					</article>
-				))}
-			</section>
+			<ul class="project-list">
+				<li class="project-card">
+					<div class="project-screenshots-row">
+						<div class="screenshot-wrap"><Image src={axelormcp1Img} alt="Axelor MCP screenshot 1" class="project-screenshot-desktop" /></div>
+						<div class="screenshot-wrap"><Image src={axelormcp2Img} alt="Axelor MCP screenshot 2" class="project-screenshot-desktop" /></div>
+					</div>
+					<div class="project-header">
+						<span class="project-name">Axelor MCP</span>
+						<span class="project-status live">Open source</span>
+					</div>
+					<p class="project-desc">Local MCP server that lets Claude Desktop query an Axelor instance directly — search partners, manage sales orders, invoices, and timesheets through natural language.</p>
+					<div class="project-footer">
+						<ul class="project-tags">
+							<li>MCP server</li>
+							<li>Claude Desktop</li>
+							<li>Axelor</li>
+						</ul>
+						<a href="https://github.com/JulienLach/axelor-mcp" target="_blank" rel="noopener" class="project-link">GitHub →</a>
+					</div>
+				</li>
+				<li class="project-card">
+					<div class="project-screenshots-row">
+						<div class="screenshot-wrap"><Image src={audit4Img} alt="Audit screenshot 4" class="project-screenshot-mobile" /></div>
+						<div class="screenshot-wrap"><Image src={audit3Img} alt="Audit screenshot 3" class="project-screenshot-mobile" /></div>
+						<div class="screenshot-wrap"><Image src={audit2Img} alt="Audit screenshot 2" class="project-screenshot-mobile" /></div>
+						<div class="screenshot-wrap"><Image src={audit1Img} alt="Audit screenshot 1" class="project-screenshot-mobile" /></div>
+					</div>
+					<div class="project-header">
+						<span class="project-name">Audit</span>
+						<span class="project-status live">Live</span>
+					</div>
+					<p class="project-desc">Mobile-first PWA for digitizing safety forms used in industrial contexts. Fill, validate, and send forms as PDF by email — fully offline-capable via service worker.</p>
+					<div class="project-footer">
+						<ul class="project-tags">
+							<li>React</li>
+							<li>Node.js</li>
+							<li>PostgreSQL</li>
+							<li>PWA</li>
+						</ul>
+					</div>
+				</li>
+				<li class="project-card">
+					<div class="project-screenshots-row">
+						<div class="screenshot-wrap"><Image src={et2i1Img} alt="et2i website" class="project-screenshot-desktop" /></div>
+						<div class="screenshot-wrap"><Image src={et2i2Img} alt="et2i quote configurator" class="project-screenshot-desktop" /></div>
+					</div>
+					<div class="project-header">
+						<span class="project-name">ET2I</span>
+						<span class="project-status live">Live</span>
+					</div>
+					<p class="project-desc">Website redesign for an industrial services company, with a customer portal and an ERP-connected quote configurator to streamline project requests.</p>
+					<div class="project-footer">
+						<ul class="project-tags">
+							<li>Web</li>
+							<li>ERP integration</li>
+						</ul>
+						<a href="https://et2i.net/" target="_blank" rel="noopener" class="project-link">View →</a>
+					</div>
+				</li>
+				<li class="project-card">
+					<div class="project-screenshots-row">
+						<div class="screenshot-wrap"><Image src={blacksygnus1Img} alt="BlackSygnus landing" class="project-screenshot-desktop" /></div>
+						<div class="screenshot-wrap"><Image src={blacksygnus2Img} alt="BlackSygnus dashboard" class="project-screenshot-desktop" /></div>
+					</div>
+					<div class="project-header">
+						<span class="project-name">BlackSygnus</span>
+						<span class="project-status live">Live</span>
+					</div>
+					<p class="project-desc">SaaS platform to centralize risk analyses, track corrective action plans, and generate DUERP and FMEA reports — turning static documents into operational management.</p>
+					<div class="project-footer">
+						<ul class="project-tags">
+							<li>Risk assessment</li>
+							<li>SaaS</li>
+						</ul>
+						<a href="https://blacksygnus.com" target="_blank" rel="noopener" class="project-link">View →</a>
+					</div>
+				</li>
+				<li class="project-card">
+					<div class="project-screenshots-row">
+						<div class="screenshot-wrap"><Image src={mocklifyImg} alt="Mocklify screenshot" class="project-screenshot-desktop" /></div>
+						<div class="screenshot-wrap"><Image src={mocklify2Img} alt="Mocklify screenshot 2" class="project-screenshot-desktop" /></div>
+					</div>
+					<div class="project-header">
+						<span class="project-name">Mocklify</span>
+						<span class="project-status live">Live</span>
+					</div>
+					<p class="project-desc">Turn screenshots into simple mockups. Add a macOS window frame, background, and shadow — right in your browser. No Photoshop, no account, no upload.</p>
+					<div class="project-footer">
+						<ul class="project-tags">
+							<li>Browser tool</li>
+							<li>100% private</li>
+							<li>PNG export</li>
+						</ul>
+						<a href="https://mocklify.ovh" target="_blank" rel="noopener" class="project-link">View →</a>
+					</div>
+				</li>
+				<li class="project-card">
+					<div class="project-screenshots-row">
+						<div class="screenshot-wrap"><Image src={meetlog2Img} alt="MeetLog screenshot 2" class="project-screenshot-mobile" /></div>
+						<div class="screenshot-wrap"><Image src={meetlog3Img} alt="MeetLog screenshot 3" class="project-screenshot-mobile" /></div>
+						<div class="screenshot-wrap"><Image src={meetlog1Img} alt="MeetLog screenshot 1" class="project-screenshot-mobile" /></div>
+						<div class="screenshot-wrap"><Image src={meetlog4Img} alt="MeetLog screenshot 4" class="project-screenshot-mobile" /></div>
+					</div>
+					<div class="project-header">
+						<span class="project-name">MeetLog</span>
+						<span class="project-status wip">Work in progress</span>
+					</div>
+					<p class="project-desc">Record, transcribe, and summarize sprint meetings and stand-ups in real-time with AI. Whisper.cpp for offline transcription, Ollama for local LLM summaries.</p>
+					<div class="project-footer">
+						<ul class="project-tags">
+							<li>React Native</li>
+							<li>Node.js</li>
+							<li>Whisper.cpp</li>
+							<li>Ollama</li>
+						</ul>
+						<a href="https://github.com/JulienLach/MeetLog" target="_blank" rel="noopener" class="project-link">GitHub →</a>
+					</div>
+				</li>
+				<li class="project-card">
+					<div class="project-screenshots-row">
+						<div class="screenshot-wrap"><Image src={ficheqs1Img} alt="FicheQS screenshot 1" class="project-screenshot-mobile" /></div>
+						<div class="screenshot-wrap"><Image src={ficheqs4Img} alt="FicheQS screenshot 4" class="project-screenshot-mobile" /></div>
+						<div class="screenshot-wrap"><Image src={ficheqs3Img} alt="FicheQS screenshot 3" class="project-screenshot-mobile" /></div>
+						<div class="screenshot-wrap"><Image src={ficheqs2Img} alt="FicheQS screenshot 2" class="project-screenshot-mobile" /></div>
+					</div>
+					<div class="project-header">
+						<span class="project-name">FicheQS</span>
+						<span class="project-status wip">Side project</span>
+					</div>
+					<p class="project-desc">Mobile-first PWA for digitizing quality and safety forms used in the real estate industry. Fill, validate, and send forms as PDF by email — on the go.</p>
+					<div class="project-footer">
+						<ul class="project-tags">
+							<li>React</li>
+							<li>Node.js</li>
+							<li>PostgreSQL</li>
+							<li>PWA</li>
+						</ul>
+					</div>
+				</li>
+				<li class="project-card">
+					<div class="project-screenshots-row">
+						<div class="screenshot-wrap"><Image src={effitech1Img} alt="EffiTech screenshot 1" class="project-screenshot-desktop" /></div>
+						<div class="screenshot-wrap"><Image src={effitech2Img} alt="EffiTech screenshot 2" class="project-screenshot-desktop" /></div>
+						<div class="screenshot-wrap"><Image src={effitech3Img} alt="EffiTech screenshot 3" class="project-screenshot-desktop" /></div>
+					</div>
+					<div class="project-screenshots-row">
+						<div class="screenshot-wrap"><Image src={effitechmobile4Img} alt="EffiTech mobile screenshot 4" class="project-screenshot-mobile" /></div>
+						<div class="screenshot-wrap"><Image src={effitechmobile1Img} alt="EffiTech mobile screenshot 1" class="project-screenshot-mobile" /></div>
+						<div class="screenshot-wrap"><Image src={effitechmobile3Img} alt="EffiTech mobile screenshot 3" class="project-screenshot-mobile" /></div>
+						<div class="screenshot-wrap"><Image src={effitechmobile2Img} alt="EffiTech mobile screenshot 2" class="project-screenshot-mobile" /></div>
+					</div>
+					<div class="project-header">
+						<span class="project-name">EffiTech</span>
+						<span class="project-status wip">Side project</span>
+					</div>
+					<p class="project-desc">Field service management PWA for scheduling technician interventions, managing clients and employees, and generating signed reports with technical documents.</p>
+					<div class="project-footer">
+						<ul class="project-tags">
+							<li>React</li>
+							<li>Node.js</li>
+							<li>PostgreSQL</li>
+							<li>Docker</li>
+						</ul>
+						<a href="https://github.com/JulienLach/EffiTech" target="_blank" rel="noopener" class="project-link">GitHub →</a>
+					</div>
+				</li>
+			</ul>
 		</main>
+		<div id="lightbox">
+			<img id="lightbox-img" src="" alt="" />
+		</div>
 	</body>
 </html>
 
-<style>
-	.profile {
-		display: flex;
-		gap: 1.2rem;
-		align-items: flex-start;
-		padding: 2rem 0;
-		border-bottom: 1px solid var(--border);
-		margin-bottom: 2rem;
-	}
-	.avatar {
-		width: 170px;
-		height: 170px;
-		border-radius: 50%;
-		flex-shrink: 0;
-	}
-	.bio {
-		display: flex;
-		flex-direction: column;
-		gap: 0.2rem;
-	}
-	.bio strong {
-		color: var(--fg);
-	}
-	.handle, .title, .stack {
-		color: var(--dim);
-		font-size: 0.95em;
-	}
-	.social {
-		display: flex;
-		gap: 0.6rem;
-		margin-top: 0.4rem;
-	}
-	.social a {
-		color: var(--dim);
-		text-decoration: none;
-		display: flex;
-		align-items: center;
-		transition: color 0.15s, transform 0.15s;
-	}
-	.social a:hover {
-		color: var(--fg);
-		transform: translateY(-2px);
+<script>
+	const lightbox = document.getElementById('lightbox');
+	const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+
+	document.querySelectorAll('.screenshot-wrap').forEach(wrap => {
+		wrap.addEventListener('click', () => {
+			const img = wrap.querySelector('img') as HTMLImageElement;
+			lightboxImg.src = img.src;
+			lightboxImg.alt = img.alt;
+			lightbox?.classList.add('open');
+			requestAnimationFrame(() => {
+				requestAnimationFrame(() => lightbox?.classList.add('visible'));
+			});
+		});
+	});
+
+	function closeLightbox() {
+		lightbox?.classList.remove('visible');
+		setTimeout(() => lightbox?.classList.remove('open'), 200);
 	}
 
-	.posts {
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-	}
-	article h2 {
-		font-size: 1em;
-		margin-bottom: 0.2rem;
-		color: var(--accent);
-	}
-	article a {
-		text-decoration: none;
-	}
-	article a:hover h2 {
-		opacity: 0.75;
-	}
-	.meta {
-		display: flex;
-		align-items: center;
-		gap: 0.3rem;
-		color: var(--dim);
-		font-size: 0.85em;
-		margin: 0 0 0.4rem;
-	}
-	.description {
-		color: var(--dim);
-		margin: 0;
-		font-size: 0.95em;
-	}
-</style>
+	lightbox?.addEventListener('click', closeLightbox);
+
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape') closeLightbox();
+	});
+</script>

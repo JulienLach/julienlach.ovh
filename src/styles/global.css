@@ -25,13 +25,14 @@
 
 body {
     font-family:
-        "Cascadia Code", "Cascadia Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+        "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
         "Courier New", monospace;
     background: var(--bg);
     color: var(--fg);
     margin: 0;
     padding: 0;
     font-size: 16px;
+    font-weight: 500;
     text-align: justify;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
@@ -120,6 +121,226 @@ hr {
 img {
     max-width: 100%;
     height: auto;
+}
+
+.profile {
+	display: flex;
+	gap: 1.2rem;
+	align-items: flex-start;
+	padding: 2rem 0;
+	border-bottom: 1px solid var(--border);
+	margin-bottom: 2rem;
+}
+.avatar {
+	width: 170px;
+	height: 170px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+.bio {
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
+}
+.handle, .title, .stack {
+	color: var(--dim);
+	font-size: 0.95em;
+}
+.social {
+	display: flex;
+	gap: 0.6rem;
+	margin-top: 0.4rem;
+}
+.social a {
+	color: var(--dim);
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	transition: color 0.15s, transform 0.15s;
+}
+.social a:hover {
+	color: var(--fg);
+	transform: translateY(-2px);
+}
+
+.project-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+.project-screenshot-desktop {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+.screenshot-wrap:has(.project-screenshot-desktop) {
+	aspect-ratio: 16/10;
+}
+.project-screenshots-row {
+	display: flex;
+	gap: 0.5rem;
+	margin-bottom: 1rem;
+}
+.screenshot-wrap {
+	flex: 1;
+	width: 0;
+	position: relative;
+	overflow: hidden;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.screenshot-wrap img {
+	width: 100%;
+	height: auto;
+	display: block;
+	transition: transform 0.2s ease;
+}
+.screenshot-wrap:hover img {
+	transform: scale(1.04);
+}
+.screenshot-wrap::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: rgba(0,0,0,0);
+	transition: background 0.2s ease;
+}
+.screenshot-wrap:hover::after {
+	background: rgba(0,0,0,0.12);
+}
+.screenshot-wrap::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 28px;
+	height: 28px;
+	transform: translate(-50%, -50%) scale(0.7);
+	opacity: 0;
+	transition: opacity 0.2s ease, transform 0.2s ease;
+	z-index: 1;
+	pointer-events: none;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C%2Fsvg%3E");
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.screenshot-wrap:hover::before {
+	opacity: 1;
+	transform: translate(-50%, -50%) scale(1);
+}
+.project-screenshot-mobile {
+	width: 100%;
+	height: auto;
+	border-radius: 4px;
+	display: block;
+}
+.project-card {
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	padding: 1rem 1.2rem;
+	transition: border-color 0.15s, box-shadow 0.15s;
+}
+.project-card:hover {
+	border-color: var(--accent);
+	box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.project-header {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	margin-bottom: 0.4rem;
+}
+.project-name {
+	font-weight: 500;
+	color: var(--fg);
+}
+.project-status {
+	font-size: 0.75em;
+	border-radius: 99px;
+	padding: 0.1em 0.55em;
+	line-height: 1.6;
+}
+.project-status.live {
+	color: #4ade80;
+	border: 1px solid #4ade8044;
+}
+.project-status.wip {
+	color: #fb923c;
+	border: 1px solid #fb923c44;
+}
+.project-desc {
+	color: var(--dim);
+	font-size: 0.95em;
+	margin: 0 0 0.75rem;
+	line-height: 1.6;
+}
+.project-footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+}
+.project-tags {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+.project-tags li {
+	font-size: 0.8em;
+	color: var(--dim);
+	border: 1px solid var(--border);
+	border-radius: 4px;
+	padding: 0.15em 0.5em;
+}
+.project-link {
+	font-size: 0.8em;
+	text-decoration: none;
+	color: var(--dim);
+	border: 1px solid var(--border);
+	border-radius: 4px;
+	padding: 0.15em 0.5em;
+	white-space: nowrap;
+	margin-left: auto;
+}
+.project-link:hover {
+	color: var(--accent);
+	border-color: var(--accent);
+}
+#lightbox {
+	display: none;
+	position: fixed;
+	inset: 0;
+	background: rgba(0,0,0,0.85);
+	z-index: 999;
+	align-items: center;
+	justify-content: center;
+	cursor: zoom-out;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
+#lightbox.open {
+	display: flex;
+}
+#lightbox.visible {
+	opacity: 1;
+}
+#lightbox img {
+	max-width: 90vw;
+	max-height: 90vh;
+	border-radius: 6px;
+	object-fit: contain;
+	transform: scale(0.92);
+	transition: transform 0.2s ease;
+}
+#lightbox.visible img {
+	transform: scale(1);
 }
 
 table {
