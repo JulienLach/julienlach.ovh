@@ -268,6 +268,10 @@ img {
 	color: #4ade80;
 	border: 1px solid #4ade8044;
 }
+.project-status.opensource {
+	color: var(--accent);
+	border: 1px solid color-mix(in srgb, var(--accent) 27%, transparent);
+}
 .project-status.wip {
 	color: #fb923c;
 	border: 1px solid #fb923c44;

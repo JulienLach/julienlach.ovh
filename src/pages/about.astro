@@ -1,53 +1,52 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
+import { Terminal, Code, PenLine, ChevronRight } from '@lucide/astro';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title="About — Julien Lach" description="About Julien Lach" />
+		<BaseHead title="About - Julien Lach" description="About Julien Lach" />
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>About</h1>
-
+            <br>
 			<p>
-				I'm a software developer based in France, focused on building web applications that solve real business problems — tools, workflows, and automation.
+				I'm a software developer based in France, focused on building tools, workflows, automation and web applications that solve real business problems.
 			</p>
 
 			<p>
-				I work mainly with TypeScript, Node.js, React, and PostgreSQL. I'm drawn to practical tools that make day-to-day work less painful, especially for teams and companies going through digitalization.
+				I work mainly with TypeScript, Node.js, React, PostgreSQL, Docker, Ansible and GitHub Actions. I'm drawn to practical tools that make day-to-day work less painful, especially for teams and companies going through digitalization.
 			</p>
+            <p>
+                
+            </p>
 
-			<h2>Setup</h2>
+			<h2>Working with</h2>
 
-			<ul class="setup-list">
-				<li>
-					<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-						<rect width="20" height="14" x="2" y="3" rx="2"/><path d="m8 21 4-4 4 4"/><path d="M6 9h.01M6 12h.01M9 9l6 0M9 12h4"/>
-					</svg>
-					<span>Linux</span>
-				</li>
-				<li>
-					<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-						<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-					</svg>
-					<span>VS Code</span>
-				</li>
-				<li>
-					<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-						<path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
-					</svg>
-					<span>Obsidian</span>
-				</li>
-				<li>
-					<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-						<path d="m9 18 6-6-6-6"/>
-					</svg>
-					<span>Claude Code</span>
-				</li>
+			<ul class="tech-list">
+				<li>JavaScript</li>
+				<li>TypeScript</li>
+				<li>NodeJS</li>
+				<li>Express.js</li>
+				<li>React</li>
+				<li>Vite</li>
+				<li>React Native</li>
+				<li>Postgres</li>
+				<li>MySQL</li>
+				<li>Docker</li>
+				<li>Portainer</li>
+				<li>Traefik</li>
+				<li>Linux</li>
+                <li>Debian/Fedora</li>
+				<li>Bash</li>
+				<li>Ansible</li>
+				<li>Git</li>
+				<li>GitHub Actions</li>
+				<li>Claude Code CLI</li>
+				<li>Obsidian</li>
 			</ul>
 
 			<h2>Currently learning</h2>
@@ -78,6 +77,21 @@ import Header from '../components/Header.astro';
 	h2 {
 		margin-top: 2rem;
 		margin-bottom: 0.5rem;
+	}
+	.tech-list {
+		list-style: none;
+		padding: 0;
+		margin: 0.5rem 0 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+	.tech-list li {
+		font-size: 0.8em;
+		color: var(--dim);
+		border: 1px solid var(--border);
+		border-radius: 4px;
+		padding: 0.15em 0.5em;
 	}
 	.setup-list {
 		list-style: none;

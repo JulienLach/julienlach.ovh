@@ -34,7 +34,7 @@ import et2i2Img from '../assets/images/et2i_2.png';
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title="Projects — Julien Lach" description="Projects by Julien Lach" />
+		<BaseHead title="Projects - Julien Lach" description="Projects by Julien Lach" />
 	</head>
 	<body>
 		<Header />
@@ -48,7 +48,7 @@ import et2i2Img from '../assets/images/et2i_2.png';
 				<div class="bio">
 					<span class="handle">@JulienLach</span>
 					<span class="title">Software Developer</span>
-					<span class="stack">Building web applications that help businesses run better — tools, workflows, and automation.</span>
+					<span class="stack">Building web applications that help businesses run better : tools, workflows, and automation.</span>
 					<div class="social">
 						<a href="https://github.com/JulienLach" target="_blank" rel="noopener" aria-label="GitHub">
 							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -76,16 +76,35 @@ import et2i2Img from '../assets/images/et2i_2.png';
 					</div>
 					<div class="project-header">
 						<span class="project-name">Axelor MCP</span>
-						<span class="project-status live">Open source</span>
+						<span class="project-status opensource">Open source</span>
 					</div>
-					<p class="project-desc">Local MCP server that lets Claude Desktop query an Axelor instance directly — search partners, manage sales orders, invoices, and timesheets through natural language.</p>
+					<p class="project-desc">Local MCP server that lets Claude Desktop query an Axelor instance directly search partners, manage sales orders, invoices, and timesheets through natural language.</p>
 					<div class="project-footer">
 						<ul class="project-tags">
 							<li>MCP server</li>
 							<li>Claude Desktop</li>
-							<li>Axelor</li>
+							<li>ERP</li>
 						</ul>
 						<a href="https://github.com/JulienLach/axelor-mcp" target="_blank" rel="noopener" class="project-link">GitHub →</a>
+					</div>
+				</li>
+				<li class="project-card">
+					<div class="project-screenshots-row">
+						<div class="screenshot-wrap"><Image src={blacksygnus1Img} alt="BlackSygnus landing" class="project-screenshot-desktop" /></div>
+						<div class="screenshot-wrap"><Image src={blacksygnus2Img} alt="BlackSygnus dashboard" class="project-screenshot-desktop" /></div>
+					</div>
+					<div class="project-header">
+						<span class="project-name">BlackSygnus</span>
+						<span class="project-status live">Live</span>
+					</div>
+					<p class="project-desc">SaaS platform to centralize risk analyses, track corrective action plans, and generate DUERP and FMEA reports turning static documents into operational management. I also built an MCP server connecting its risk data to Claude Code, enabling AI-driven analysis and recommendations.</p>
+					<div class="project-footer">
+						<ul class="project-tags">
+							<li>Risk assessment</li>
+							<li>SaaS</li>
+							<li>MCP server</li>
+						</ul>
+						<a href="https://blacksygnus.com" target="_blank" rel="noopener" class="project-link">View →</a>
 					</div>
 				</li>
 				<li class="project-card">
@@ -99,7 +118,7 @@ import et2i2Img from '../assets/images/et2i_2.png';
 						<span class="project-name">Audit</span>
 						<span class="project-status live">Live</span>
 					</div>
-					<p class="project-desc">Mobile-first PWA for digitizing safety forms used in industrial contexts. Fill, validate, and send forms as PDF by email — fully offline-capable via service worker.</p>
+					<p class="project-desc">Mobile-first PWA for digitizing safety forms used in industrial contexts. Fill, validate, and send forms as PDF by email fully offline-capable via service worker.</p>
 					<div class="project-footer">
 						<ul class="project-tags">
 							<li>React</li>
@@ -118,31 +137,14 @@ import et2i2Img from '../assets/images/et2i_2.png';
 						<span class="project-name">ET2I</span>
 						<span class="project-status live">Live</span>
 					</div>
-					<p class="project-desc">Website redesign for an industrial services company, with a customer portal and an ERP-connected quote configurator to streamline project requests.</p>
+					<p class="project-desc">Website redesign for an industrial services company, with a customer portal and an ERP-connected quote configurator to streamline project requests. Tablet-responsive so sales reps can submit project requests directly on-site at the client's location.</p>
 					<div class="project-footer">
 						<ul class="project-tags">
 							<li>Web</li>
 							<li>ERP integration</li>
+							<li>Customer portal</li>
 						</ul>
 						<a href="https://et2i.net/" target="_blank" rel="noopener" class="project-link">View →</a>
-					</div>
-				</li>
-				<li class="project-card">
-					<div class="project-screenshots-row">
-						<div class="screenshot-wrap"><Image src={blacksygnus1Img} alt="BlackSygnus landing" class="project-screenshot-desktop" /></div>
-						<div class="screenshot-wrap"><Image src={blacksygnus2Img} alt="BlackSygnus dashboard" class="project-screenshot-desktop" /></div>
-					</div>
-					<div class="project-header">
-						<span class="project-name">BlackSygnus</span>
-						<span class="project-status live">Live</span>
-					</div>
-					<p class="project-desc">SaaS platform to centralize risk analyses, track corrective action plans, and generate DUERP and FMEA reports — turning static documents into operational management.</p>
-					<div class="project-footer">
-						<ul class="project-tags">
-							<li>Risk assessment</li>
-							<li>SaaS</li>
-						</ul>
-						<a href="https://blacksygnus.com" target="_blank" rel="noopener" class="project-link">View →</a>
 					</div>
 				</li>
 				<li class="project-card">
@@ -173,7 +175,8 @@ import et2i2Img from '../assets/images/et2i_2.png';
 					</div>
 					<div class="project-header">
 						<span class="project-name">MeetLog</span>
-						<span class="project-status wip">Work in progress</span>
+						<span class="project-status wip">Side project</span>
+                        <span class="project-status wip">Work in progress</span>
 					</div>
 					<p class="project-desc">Record, transcribe, and summarize sprint meetings and stand-ups in real-time with AI. Whisper.cpp for offline transcription, Ollama for local LLM summaries.</p>
 					<div class="project-footer">
@@ -197,7 +200,7 @@ import et2i2Img from '../assets/images/et2i_2.png';
 						<span class="project-name">FicheQS</span>
 						<span class="project-status wip">Side project</span>
 					</div>
-					<p class="project-desc">Mobile-first PWA for digitizing quality and safety forms used in the real estate industry. Fill, validate, and send forms as PDF by email — on the go.</p>
+					<p class="project-desc">Mobile-first PWA for digitizing quality and safety forms used in the real estate industry. Fill, validate, and send forms as PDF by email on the go.</p>
 					<div class="project-footer">
 						<ul class="project-tags">
 							<li>React</li>
