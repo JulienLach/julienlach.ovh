@@ -242,6 +242,9 @@ import et2i2Img from '../assets/images/et2i_2.png';
 		<div id="lightbox">
 			<img id="lightbox-img" src="" alt="" />
 		</div>
+		<noscript>
+			<style>.project-card { opacity: 1 !important; transform: none !important; }</style>
+		</noscript>
 	</body>
 </html>
 
@@ -271,4 +274,22 @@ import et2i2Img from '../assets/images/et2i_2.png';
 	document.addEventListener('keydown', (e) => {
 		if (e.key === 'Escape') closeLightbox();
 	});
+
+	const cards = document.querySelectorAll('.project-card');
+	const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+	if (reduceMotion) {
+		cards.forEach(card => card.classList.add('visible'));
+	} else {
+		const revealObserver = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+					revealObserver.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+		cards.forEach(card => revealObserver.observe(card));
+	}
 </script>

@@ -76,13 +76,30 @@ const { pathname } = Astro.url;
 		color: var(--dim);
 		cursor: pointer;
 		padding: 0;
-		display: flex;
-		align-items: center;
+		position: relative;
+		width: 16px;
+		height: 16px;
 	}
 	#theme-toggle:hover {
 		color: var(--fg);
 	}
 
-	:global(:root[data-theme="dark"]) #icon-moon { display: none; }
-	:global(:root[data-theme="light"]) #icon-sun  { display: none; }
+	:global(#icon-sun),
+	:global(#icon-moon) {
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: opacity 0.25s ease, transform 0.25s ease;
+	}
+
+	:global(:root[data-theme="dark"]) #icon-moon {
+		opacity: 0;
+		transform: scale(0.7);
+		pointer-events: none;
+	}
+	:global(:root[data-theme="light"]) #icon-sun {
+		opacity: 0;
+		transform: scale(0.7);
+		pointer-events: none;
+	}
 </style>
