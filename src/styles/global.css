@@ -298,10 +298,6 @@ img {
 	color: #fb923c;
 	border: 1px solid #fb923c44;
 }
-.project-status.client {
-	color: #4ade80;
-	border: 1px solid #4ade8044;
-}
 .project-desc {
 	color: var(--dim);
 	font-size: 0.95em;
