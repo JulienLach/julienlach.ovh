@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://julienlach.ovh/sitemap-index.xml

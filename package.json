@@ -3,22 +3,26 @@
     "type": "module",
     "version": "1.0.0",
     "scripts": {
-        "dev": "astro dev",
-        "build": "astro build",
-        "preview": "astro preview",
-        "check": "astro check",
-        "astro": "astro"
+        "dev": "vite",
+        "build": "tsc --noEmit && vite build",
+        "preview": "vite preview"
     },
     "dependencies": {
-        "@astrojs/mdx": "^4.3.13",
-        "@astrojs/rss": "^4.0.15",
-        "@astrojs/sitemap": "^3.7.0",
-        "@lucide/astro": "^1.24.0",
-        "astro": "^5.17.1",
-        "sharp": "^0.34.3"
+        "front-matter": "^4.0.2",
+        "lucide-react": "^0.544.0",
+        "react": "^19.1.1",
+        "react-dom": "^19.1.1",
+        "react-markdown": "^10.1.0",
+        "react-router-dom": "^7.9.1",
+        "rehype-raw": "^7.0.0",
+        "remark-gfm": "^4.0.1",
+        "zod": "^4.1.5"
     },
     "devDependencies": {
-        "@astrojs/check": "^0.9.9",
-        "typescript": "^5.9.3"
+        "@types/react": "^19.1.10",
+        "@types/react-dom": "^19.1.7",
+        "@vitejs/plugin-react": "^5.0.0",
+        "typescript": "^5.9.3",
+        "vite": "^7.1.2"
     }
 }

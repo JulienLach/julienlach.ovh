@@ -1,0 +1,31 @@
+.h2 {
+	margin-top: 2rem;
+	margin-bottom: 0.5rem;
+}
+.techList {
+	list-style: none;
+	padding: 0;
+	margin: 0.5rem 0 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+.techList li {
+	font-size: 0.8em;
+	color: var(--dim);
+	border: 1px solid var(--border);
+	border-radius: 4px;
+	padding: 0.15em 0.5em;
+}
+.roadcard {
+	display: inline-block;
+	margin-top: 0.5rem;
+}
+.roadcard img {
+	width: 230px;
+}
+.githubLink {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+}

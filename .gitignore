@@ -1,7 +1,8 @@
 # build output
 dist/
-# generated types
-.astro/
+
+# playwright MCP test artifacts
+.playwright-mcp/
 
 # dependencies
 node_modules/

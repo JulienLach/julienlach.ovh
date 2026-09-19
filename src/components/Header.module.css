@@ -1,0 +1,73 @@
+.header {
+	max-width: 680px;
+	margin: 0 auto;
+	padding: 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+}
+.header::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 1.5rem;
+	right: 1.5rem;
+	border-bottom: 1px solid var(--border);
+}
+.home {
+	text-decoration: none;
+	color: var(--fg);
+	font-weight: normal;
+}
+.home:hover {
+	color: var(--accent);
+}
+.nav {
+	display: flex;
+	gap: 1.5rem;
+	align-items: center;
+}
+.nav a {
+	text-decoration: none;
+	color: var(--dim);
+	line-height: 1;
+}
+.nav a:hover {
+	color: var(--accent);
+}
+.nav a.active {
+	color: var(--accent);
+}
+.themeToggle {
+	background: none;
+	border: none;
+	color: var(--dim);
+	cursor: pointer;
+	padding: 0;
+	position: relative;
+	width: 16px;
+	height: 16px;
+}
+.themeToggle:hover {
+	color: var(--fg);
+}
+
+.iconSun,
+.iconMoon {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+:root[data-theme='dark'] .iconMoon {
+	opacity: 0;
+	transform: scale(0.7);
+	pointer-events: none;
+}
+:root[data-theme='light'] .iconSun {
+	opacity: 0;
+	transform: scale(0.7);
+	pointer-events: none;
+}
