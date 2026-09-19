@@ -1,6 +1,7 @@
-.h2 {
-	margin-top: 2rem;
-	margin-bottom: 0.5rem;
+.intro {
+	padding-bottom: 2rem;
+	margin-bottom: 2rem;
+	border-bottom: 1px solid var(--border);
 }
 .techList {
 	list-style: none;
@@ -16,16 +17,4 @@
 	border: 1px solid var(--border);
 	border-radius: 4px;
 	padding: 0.15em 0.5em;
-}
-.roadcard {
-	display: inline-block;
-	margin-top: 0.5rem;
-}
-.roadcard img {
-	width: 230px;
-}
-.githubLink {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.4rem;
 }

@@ -21,9 +21,6 @@ export default function Header() {
 				<Link to="/" className={pathname === '/' ? styles.active : undefined}>
 					Projects
 				</Link>
-				<Link to="/about" className={pathname.startsWith('/about') ? styles.active : undefined}>
-					About
-				</Link>
 				<button className={styles.themeToggle} aria-label="Toggle theme" onClick={toggleTheme}>
 					<Sun className={styles.iconSun} size={16} strokeWidth={1.5} />
 					<Moon className={styles.iconMoon} size={16} strokeWidth={1.5} />

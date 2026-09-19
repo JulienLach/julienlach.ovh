@@ -4,7 +4,9 @@ import Lightbox from '../components/Lightbox';
 import ProjectCard from '../components/ProjectCard';
 import { SITE_TITLE } from '../consts';
 import { projects } from '../data/projects';
+import { TECH_STACK } from '../data/techStack';
 import { useDocumentHead } from '../hooks/useDocumentHead';
+import styles from './ProjectsPage.module.css';
 
 export default function ProjectsPage() {
 	useDocumentHead(`Projects - ${SITE_TITLE}`, 'Projects by Julien Lach');
@@ -60,6 +62,23 @@ export default function ProjectsPage() {
 							</a>
 						</div>
 					</div>
+				</section>
+				<section className={styles.intro}>
+					<p>
+						I'm a software developer based in France, focused on building tools, workflows, automation
+						and web applications that solve real business problems.
+					</p>
+					<p>
+						I work mainly with TypeScript, Node.js, React, PostgreSQL, Docker, Ansible and GitHub
+						Actions. I'm drawn to practical tools that make day-to-day work less painful, especially
+						for teams and companies going through digitalization.
+					</p>
+					<h2>Working with</h2>
+					<ul className={styles.techList}>
+						{TECH_STACK.map((tech) => (
+							<li key={tech}>{tech}</li>
+						))}
+					</ul>
 				</section>
 				<ul className="project-list">
 					{projects.map((project) => (
