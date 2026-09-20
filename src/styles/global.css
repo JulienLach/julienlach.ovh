@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "Shentox";
+    src: url("/fonts/Shentox-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --bg: #1f2630;
     --fg: #cccccc;
@@ -19,6 +27,25 @@
     color: #ffffff;
 }
 
+html {
+    scrollbar-color: var(--accent) transparent;
+    scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--accent) 55%, transparent);
+    border: 2px solid var(--bg);
+    border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -34,8 +61,13 @@
 
 body {
     font-family:
-        "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
-        monospace;
+        "Shentox",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
     background: var(--bg);
     color: var(--fg);
     margin: 0;
@@ -43,7 +75,18 @@ body {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.65;
+    letter-spacing: 0.05em;
     -webkit-font-smoothing: antialiased;
+}
+
+:root:not([data-theme="light"]) body {
+    background: repeating-linear-gradient(rgba(255, 255, 255, 0.012) 0px, transparent 1px, transparent 5px), var(--bg);
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    box-shadow: 0 0 8px color-mix(in srgb, var(--accent) 50%, transparent);
 }
 
 main {
@@ -62,6 +105,7 @@ a {
 a:hover {
     color: var(--accent);
     text-decoration-color: var(--accent);
+    text-shadow: 0 0 6px color-mix(in srgb, var(--accent) 60%, transparent);
 }
 
 h1,
@@ -75,6 +119,8 @@ h6 {
     margin: 0 0 0.5rem;
     color: var(--fg);
     line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
 p {
@@ -104,7 +150,8 @@ pre {
     padding: 1em 1.2em;
     overflow-x: auto;
     margin: 0 0 1em;
-    border-left: 2px solid var(--border);
+    border-left: 2px solid var(--accent);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
 }
 
 pre > code {
@@ -114,7 +161,8 @@ pre > code {
 }
 
 blockquote {
-    border-left: 2px solid var(--border);
+    border-left: 2px solid var(--accent);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 8px 100%, 0 calc(100% - 8px));
     margin: 0 0 1em;
     padding: 0 0 0 1em;
     color: var(--dim);
@@ -122,8 +170,21 @@ blockquote {
 
 hr {
     border: none;
-    border-top: 1px solid var(--border);
+    height: 1px;
     margin: 2rem 0;
+    background: linear-gradient(90deg, transparent, var(--border) 30%, var(--border) 70%, transparent);
+    position: relative;
+}
+hr::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    transform: translateX(-50%) rotate(45deg);
+    background: var(--accent);
+    box-shadow: 0 0 6px color-mix(in srgb, var(--accent) 60%, transparent);
 }
 
 img {
@@ -135,13 +196,13 @@ img {
     display: flex;
     gap: 1.2rem;
     align-items: flex-start;
-    padding: 2rem 0;
+    padding: 1.7rem 0;
     border-bottom: 1px solid var(--border);
     margin-bottom: 2rem;
 }
 .avatar {
-    width: 170px;
-    height: 170px;
+    width: 145px;
+    height: 145px;
     border-radius: 50%;
     flex-shrink: 0;
 }
@@ -151,10 +212,53 @@ img {
     gap: 0.2rem;
 }
 .handle,
-.title,
-.stack {
+.title {
     color: var(--dim);
     font-size: 0.95em;
+}
+.stack {
+    color: var(--dim);
+}
+.handle-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+:root[data-theme="light"] .stack,
+:root[data-theme="light"] .project-desc {
+    color: var(--fg);
+}
+.title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+.work-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    width: fit-content;
+    font-size: 0.8em;
+    color: var(--accent);
+    border: 1px solid color-mix(in srgb, var(--accent) 37%, transparent);
+    border-radius: 99px;
+    padding: 0.1em 0.6em 0.1em 0.5em;
+    text-decoration: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+.work-status::before {
+    content: "\25cf";
+    margin-right: 0.35em;
+    font-size: 0.7em;
+    text-shadow: 0 0 4px currentColor;
+}
+.work-status:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 1px color-mix(in srgb, var(--accent) 45%, transparent);
 }
 .social {
     display: flex;
@@ -173,6 +277,24 @@ img {
 .social a:hover {
     color: var(--fg);
     transform: translateY(-2px) scale(1.08);
+}
+.github-activity {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    width: fit-content;
+    font-size: 0.75em;
+    color: var(--dim);
+    text-decoration: none;
+}
+.github-activity::before {
+    content: "\25cf";
+    color: #4ade80;
+    font-size: 0.7em;
+    text-shadow: 0 0 4px currentColor;
+}
+.github-activity:hover {
+    color: var(--fg);
 }
 
 .project-list {
@@ -254,7 +376,7 @@ img {
 }
 .project-card {
     border: 1px solid var(--border);
-    border-radius: 6px;
+    clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
     padding: 1rem 1.2rem;
     transition:
         border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
@@ -277,7 +399,7 @@ img {
 }
 .project-card:hover {
     border-color: var(--accent);
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0 16px color-mix(in srgb, var(--accent) 45%, transparent);
 }
 @media (prefers-reduced-motion: no-preference) {
     .project-card:hover {
@@ -290,15 +412,30 @@ img {
     gap: 0.75rem;
     margin-bottom: 0.4rem;
 }
+.project-index {
+    font-size: 0.75em;
+    color: var(--dim);
+    border: 1px solid var(--border);
+    clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
+    padding: 0.1em 0.4em;
+    letter-spacing: 0.05em;
+}
 .project-name {
     font-weight: 500;
     color: var(--fg);
 }
 .project-status {
-    font-size: 0.75em;
+    font-size: 0.78em;
     border-radius: 99px;
     padding: 0.1em 0.55em;
     line-height: 1.6;
+}
+.project-status::before {
+    content: "\25cf";
+    margin-right: 0.35em;
+    font-size: 0.7em;
+    vertical-align: 1px;
+    text-shadow: 0 0 4px currentColor;
 }
 .project-status.live {
     color: #4ade80;
@@ -306,7 +443,7 @@ img {
 }
 .project-status.opensource {
     color: var(--accent);
-    border: 1px solid color-mix(in srgb, var(--accent) 27%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
 }
 .project-status.wip {
     color: #fb923c;
@@ -314,7 +451,6 @@ img {
 }
 .project-desc {
     color: var(--dim);
-    font-size: 0.95em;
     margin: 0 0 0.75rem;
     line-height: 1.6;
 }
@@ -336,15 +472,18 @@ img {
     font-size: 0.8em;
     color: var(--dim);
     border: 1px solid var(--border);
-    border-radius: 4px;
+    clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
     padding: 0.15em 0.5em;
 }
 .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
     font-size: 0.8em;
     text-decoration: none;
     color: var(--dim);
     border: 1px solid var(--border);
-    border-radius: 4px;
+    clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
     padding: 0.15em 0.5em;
     white-space: nowrap;
     margin-left: auto;
@@ -399,4 +538,18 @@ td {
 th {
     color: var(--dim);
     font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.85em;
+    border-bottom: 1px solid var(--accent);
+    box-shadow: 0 1px 4px -1px color-mix(in srgb, var(--accent) 50%, transparent);
+}
+
+.visitor-counter {
+    text-align: center;
+    color: var(--dim);
+    font-size: 0.7em;
+    letter-spacing: 0.08em;
+    opacity: 0.55;
+    margin: 3rem 0 0;
 }

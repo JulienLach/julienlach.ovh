@@ -3,10 +3,11 @@ import type { Project } from '../data/projects';
 
 type Props = {
 	project: Project;
+	index: number;
 	onOpenLightbox: (image: { src: string; alt: string }) => void;
 };
 
-export default function ProjectCard({ project, onOpenLightbox }: Props) {
+export default function ProjectCard({ project, index, onOpenLightbox }: Props) {
 	const { ref, visible } = useRevealOnScroll<HTMLLIElement>();
 
 	return (
@@ -29,6 +30,7 @@ export default function ProjectCard({ project, onOpenLightbox }: Props) {
 				</div>
 			))}
 			<div className="project-header">
+				<span className="project-index">{String(index + 1).padStart(2, '0')}</span>
 				<span className="project-name">{project.name}</span>
 				{project.statuses.map((status) => (
 					<span className={`project-status ${status.type}`} key={status.label}>
@@ -46,6 +48,20 @@ export default function ProjectCard({ project, onOpenLightbox }: Props) {
 				{project.link && (
 					<a href={project.link.href} target="_blank" rel="noopener" className="project-link">
 						{project.link.label}
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="12"
+							height="12"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							strokeWidth="2"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+						>
+							<path d="M7 7h10v10" />
+							<path d="M7 17 17 7" />
+						</svg>
 					</a>
 				)}
 			</div>

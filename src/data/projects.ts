@@ -48,7 +48,7 @@ export const projects: Project[] = [
         description:
             "Local MCP server that lets Claude Desktop query an Axelor instance directly search partners, manage sales orders, invoices, and timesheets through natural language.",
         tags: ["MCP server", "Claude Desktop", "ERP"],
-        link: { href: "https://github.com/JulienLach/axelor-mcp", label: "GitHub →" },
+        link: { href: "https://github.com/JulienLach/axelor-mcp", label: "GitHub" },
         screenshotRows: [
             {
                 variant: "desktop",
@@ -66,7 +66,7 @@ export const projects: Project[] = [
         description:
             "SaaS platform to centralize risk analyses, track corrective action plans, and generate DUERP and FMEA reports turning static documents into operational management. I also built an MCP server connecting its risk data to Claude Code, enabling AI-driven analysis and recommendations.",
         tags: ["Risk assessment", "SaaS", "MCP server"],
-        link: { href: "https://blacksygnus.com", label: "View →" },
+        link: { href: "https://blacksygnus.com", label: "View" },
         screenshotRows: [
             {
                 variant: "desktop",
@@ -103,7 +103,7 @@ export const projects: Project[] = [
         description:
             "Website redesign for an industrial services company, with a customer portal and an ERP-connected quote configurator to streamline project requests. Tablet-responsive so sales reps can submit project requests directly on-site at the client's location.",
         tags: ["Web", "ERP integration", "Customer portal"],
-        link: { href: "https://et2i.net/", label: "View →" },
+        link: { href: "https://et2i.net/", label: "View" },
         screenshotRows: [
             {
                 variant: "desktop",
