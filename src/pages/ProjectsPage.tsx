@@ -8,7 +8,6 @@ import { SITE_TITLE } from "../consts";
 import { projects } from "../data/projects";
 import { TECH_STACK } from "../data/techStack";
 import { useDocumentHead } from "../hooks/useDocumentHead";
-import styles from "./ProjectsPage.module.css";
 
 export default function ProjectsPage() {
     useDocumentHead(`Projects - ${SITE_TITLE}`, "Projects by Julien Lach");
@@ -113,7 +112,7 @@ export default function ProjectsPage() {
                         </div>
                     </div>
                 </section>
-                <section className={styles.intro}>
+                <section className="intro">
                     <p>
                         I'm a software developer based in France, focused on building tools, workflows, AI automations
                         and web applications that solve real business problems.
@@ -124,7 +123,7 @@ export default function ProjectsPage() {
                         companies going through digitalization.
                     </p>
                     <h2>Working with</h2>
-                    <ul className={styles.techList}>
+                    <ul className="techList">
                         {TECH_STACK.map((tech) => (
                             <li key={tech}>{tech}</li>
                         ))}

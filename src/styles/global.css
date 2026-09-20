@@ -14,14 +14,6 @@
     --border: #4d4d4d;
 }
 
-:root[data-theme="light"] {
-    --bg: #fafafa;
-    --fg: #1a1a1a;
-    --dim: #5a5a5a;
-    --accent: #0096c7;
-    --border: #e0e0e0;
-}
-
 ::selection {
     background: #00b4d8;
     color: #ffffff;
@@ -68,7 +60,7 @@ body {
         Roboto,
         Arial,
         sans-serif;
-    background: var(--bg);
+    background: repeating-linear-gradient(rgba(255, 255, 255, 0.012) 0px, transparent 1px, transparent 5px), var(--bg);
     color: var(--fg);
     margin: 0;
     padding: 0;
@@ -77,10 +69,6 @@ body {
     line-height: 1.65;
     letter-spacing: 0.05em;
     -webkit-font-smoothing: antialiased;
-}
-
-:root:not([data-theme="light"]) body {
-    background: repeating-linear-gradient(rgba(255, 255, 255, 0.012) 0px, transparent 1px, transparent 5px), var(--bg);
 }
 
 :focus-visible {
@@ -224,10 +212,6 @@ img {
     align-items: center;
     gap: 0.6rem;
     flex-wrap: wrap;
-}
-:root[data-theme="light"] .stack,
-:root[data-theme="light"] .project-desc {
-    color: var(--fg);
 }
 .title-row {
     display: flex;
@@ -552,4 +536,74 @@ th {
     letter-spacing: 0.08em;
     opacity: 0.55;
     margin: 3rem 0 0;
+}
+
+/* Header */
+.header {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 1.5rem;
+    right: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+.homeHeading {
+    display: contents;
+    text-transform: none;
+    letter-spacing: inherit;
+}
+.home {
+    text-decoration: none;
+    color: var(--fg);
+    font-weight: normal;
+}
+.home:hover {
+    color: var(--accent);
+}
+.nav {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+.nav a {
+    text-decoration: none;
+    color: var(--dim);
+    line-height: 1;
+}
+.nav a:hover {
+    color: var(--accent);
+}
+.nav a.active {
+    color: var(--accent);
+}
+
+/* ProjectsPage */
+.intro {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+.techList {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.techList li {
+    font-size: 0.85em;
+    color: var(--accent);
+    border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+    border-radius: 4px;
+    padding: 0.15em 0.5em;
 }

@@ -30,13 +30,6 @@
 		</script>
 
 		<script>
-			// Anti-FOUC: apply the saved/preferred theme before first paint.
-			(function () {
-				var saved = localStorage.getItem('theme');
-				var preferred = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-				document.documentElement.dataset.theme = saved || preferred;
-			})();
-
 			// GitHub Pages SPA fallback: restore the real path redirected by 404.html.
 			(function () {
 				var redirect = sessionStorage.redirect;
@@ -47,7 +40,7 @@
 			})();
 		</script>
 	</head>
-	<body>
+	<body style="background: #1f2630">
 		<div id="root"></div>
 		<script type="module" src="/src/main.tsx"></script>
 	</body>
