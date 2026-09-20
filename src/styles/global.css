@@ -189,8 +189,8 @@ img {
     margin-bottom: 2rem;
 }
 .avatar {
-    width: 145px;
-    height: 145px;
+    width: 115px;
+    height: 115px;
     border-radius: 50%;
     flex-shrink: 0;
 }
@@ -204,24 +204,12 @@ img {
     flex-direction: column;
     gap: 0.2rem;
 }
-.handle,
 .title {
     color: var(--dim);
     font-size: 0.95em;
 }
-.experience {
-    color: var(--dim);
-    font-size: 0.8em;
-}
 .stack {
     color: var(--dim);
-}
-.handle-row {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    flex-wrap: wrap;
-    min-height: 2.6rem;
 }
 .title-row {
     display: flex;
@@ -256,6 +244,7 @@ img {
 }
 .social {
     display: flex;
+    align-items: center;
     gap: 0.6rem;
     margin-top: 0.4rem;
 }
@@ -277,7 +266,7 @@ img {
     align-items: center;
     gap: 0.35em;
     width: fit-content;
-    font-size: 0.75em;
+    font-size: 0.8em;
     color: var(--dim);
     text-decoration: none;
 }
@@ -287,8 +276,9 @@ img {
     font-size: 0.7em;
     text-shadow: 0 0 4px currentColor;
 }
-.github-activity:hover {
+.social .github-activity:hover {
     color: var(--fg);
+    transform: none;
 }
 
 .project-list {
@@ -555,7 +545,7 @@ th {
 .header {
     max-width: 680px;
     margin: 0 auto;
-    padding: 1.5rem;
+    padding: 1.5rem 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -580,22 +570,6 @@ th {
     font-weight: normal;
 }
 .home:hover {
-    color: var(--accent);
-}
-.nav {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-}
-.nav a {
-    text-decoration: none;
-    color: var(--dim);
-    line-height: 1;
-}
-.nav a:hover {
-    color: var(--accent);
-}
-.nav a.active {
     color: var(--accent);
 }
 

@@ -16,11 +16,6 @@ export default function Header() {
 					Julien Lach
 				</Link>
 			)}
-			<nav className="nav">
-				<Link to="/" className={pathname === '/' ? 'active' : undefined}>
-					Projects
-				</Link>
-			</nav>
 		</header>
 	);
 }

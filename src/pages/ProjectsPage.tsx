@@ -9,11 +9,7 @@ import { projects } from "../data/projects";
 import { TECH_STACK } from "../data/techStack";
 import { useDocumentHead } from "../hooks/useDocumentHead";
 
-const EXPERIENCE_START_YEAR = 2023;
-
 export default function ProjectsPage() {
-    const yearsOfExperience = new Date().getFullYear() - EXPERIENCE_START_YEAR;
-
     useDocumentHead(
         `${SITE_TITLE} - Software Developer`,
         "Julien Lach - software developer in France building web apps, automation tools and AI-powered workflows with TypeScript, React and Node.js.",
@@ -28,13 +24,8 @@ export default function ProjectsPage() {
                 <section className="profile">
                     <img src="https://github.com/JulienLach.png" alt="Julien Lach" className="avatar" />
                     <div className="bio">
-                        <div className="handle-row">
-                            <span className="handle">@JulienLach</span>
-                            <GithubActivity />
-                        </div>
                         <div className="title-row">
                             <span className="title">Software Developer</span>
-                            <span className="experience">{yearsOfExperience}+ years exp</span>
                             <a
                                 href="https://www.linkedin.com/company/acai-france/posts/"
                                 target="_blank"
@@ -117,6 +108,7 @@ export default function ProjectsPage() {
                                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                                 </svg>
                             </a>
+                            <GithubActivity />
                         </div>
                     </div>
                 </section>
@@ -136,6 +128,7 @@ export default function ProjectsPage() {
                         ))}
                     </ul>
                 </section>
+                <h2>Projects</h2>
                 <ul className="project-list">
                     {projects.map((project, index) => (
                         <ProjectCard
