@@ -11,7 +11,7 @@ export default function ProjectCard({ project, index, onOpenLightbox }: Props) {
 	const { ref, visible } = useRevealOnScroll<HTMLLIElement>();
 
 	return (
-		<li ref={ref} className={`project-card${visible ? ' visible' : ''}`}>
+		<li ref={ref} id={project.id} className={`project-card${visible ? ' visible' : ''}`}>
 			{project.screenshotRows.map((row, rowIndex) => (
 				<div className="project-screenshots-row" key={rowIndex}>
 					{row.screenshots.map((shot) => (
@@ -31,7 +31,7 @@ export default function ProjectCard({ project, index, onOpenLightbox }: Props) {
 			))}
 			<div className="project-header">
 				<span className="project-index">{String(index + 1).padStart(2, '0')}</span>
-				<span className="project-name">{project.name}</span>
+				<h3 className="project-name">{project.name}</h3>
 				{project.statuses.map((status) => (
 					<span className={`project-status ${status.type}`} key={status.label}>
 						{status.label}

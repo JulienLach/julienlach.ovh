@@ -412,6 +412,9 @@ img {
 .project-name {
     font-weight: 500;
     color: var(--fg);
+    text-transform: none;
+    letter-spacing: inherit;
+    margin: 0;
 }
 .project-status {
     font-size: 0.78em;
