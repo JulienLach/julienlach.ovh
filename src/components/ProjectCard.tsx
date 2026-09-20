@@ -23,6 +23,9 @@ export default function ProjectCard({ project, index, onOpenLightbox }: Props) {
 							<img
 								src={shot.src}
 								alt={shot.alt}
+								width={shot.width}
+								height={shot.height}
+								loading="lazy"
 								className={row.variant === 'desktop' ? 'project-screenshot-desktop' : 'project-screenshot-mobile'}
 							/>
 						</div>
