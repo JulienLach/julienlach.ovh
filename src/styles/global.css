@@ -194,6 +194,11 @@ img {
     border-radius: 50%;
     flex-shrink: 0;
 }
+@media (max-width: 600px) {
+    .avatar {
+        display: none;
+    }
+}
 .bio {
     display: flex;
     flex-direction: column;
