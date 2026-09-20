@@ -15,8 +15,10 @@ export const TECH_STACK = [
     "Bash",
     "Ansible",
     "Git",
+    "MCP",
     "GitHub Actions",
     "Claude Code CLI",
     "OpenCode",
+    "Open Source Harnesses",
     "Obsidian",
 ];

@@ -9,7 +9,11 @@ import { projects } from "../data/projects";
 import { TECH_STACK } from "../data/techStack";
 import { useDocumentHead } from "../hooks/useDocumentHead";
 
+const EXPERIENCE_START_YEAR = 2023;
+
 export default function ProjectsPage() {
+    const yearsOfExperience = new Date().getFullYear() - EXPERIENCE_START_YEAR;
+
     useDocumentHead(
         `${SITE_TITLE} - Software Developer`,
         "Julien Lach — software developer in France building web apps, automation tools and AI-powered workflows with TypeScript, React and Node.js.",
@@ -30,6 +34,7 @@ export default function ProjectsPage() {
                         </div>
                         <div className="title-row">
                             <span className="title">Software Developer</span>
+                            <span className="experience">{yearsOfExperience}+ years exp</span>
                             <a
                                 href="https://www.linkedin.com/company/acai-france/posts/"
                                 target="_blank"
@@ -117,13 +122,12 @@ export default function ProjectsPage() {
                 </section>
                 <section className="intro">
                     <p>
-                        I'm a software developer based in France, focused on building tools, workflows, AI automations
-                        and web applications that solve real business problems.
+                        I'm a software developer based in France, building tools, workflows, and AI-powered
+                        automations for teams and companies going through digitalization.
                     </p>
                     <p>
-                        I work mainly with TypeScript, Node.js, React, PostgreSQL, Docker, Ansible and GitHub Actions.
-                        I'm drawn to practical tools that make day-to-day work less painful, especially for teams and
-                        companies going through digitalization.
+                        My recent work spans ERP integrations, SaaS platforms, and progressive web apps, often paired
+                        with an MCP server so the tool can be driven with natural language.
                     </p>
                     <h2>Working with</h2>
                     <ul className="techList">

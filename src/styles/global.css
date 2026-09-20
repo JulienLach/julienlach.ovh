@@ -209,6 +209,10 @@ img {
     color: var(--dim);
     font-size: 0.95em;
 }
+.experience {
+    color: var(--dim);
+    font-size: 0.8em;
+}
 .stack {
     color: var(--dim);
 }
