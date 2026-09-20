@@ -16,7 +16,7 @@ export default function ProjectsPage() {
 
     useDocumentHead(
         `${SITE_TITLE} - Software Developer`,
-        "Julien Lach — software developer in France building web apps, automation tools and AI-powered workflows with TypeScript, React and Node.js.",
+        "Julien Lach - software developer in France building web apps, automation tools and AI-powered workflows with TypeScript, React and Node.js.",
     );
 
     const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
@@ -122,8 +122,8 @@ export default function ProjectsPage() {
                 </section>
                 <section className="intro">
                     <p>
-                        I'm a software developer based in France, building tools, workflows, and AI-powered
-                        automations for teams and companies going through digitalization.
+                        I'm a Software Developer based in France, building tools, workflows, and AI-powered automations
+                        for teams and companies going through digitalization.
                     </p>
                     <p>
                         My recent work spans ERP integrations, SaaS platforms, and progressive web apps, often paired

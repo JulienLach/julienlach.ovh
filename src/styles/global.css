@@ -436,15 +436,15 @@ img {
 }
 .project-status.live {
     color: #4ade80;
-    border: 1px solid #4ade8044;
+    border: 1px solid #4ade805b;
 }
 .project-status.opensource {
     color: var(--accent);
     border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
 }
 .project-status.wip {
-    color: #fb923c;
-    border: 1px solid #fb923c44;
+    color: #c790ff;
+    border: 1px solid #c084fc86;
 }
 .project-desc {
     color: var(--dim);
