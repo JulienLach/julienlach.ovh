@@ -204,6 +204,17 @@ img {
     flex-direction: column;
     gap: 0.2rem;
 }
+.name {
+    font-weight: 500;
+    font-size: 1.1em;
+    color: var(--fg);
+    text-transform: none;
+    letter-spacing: inherit;
+    margin: 0;
+}
+.title-separator {
+    color: var(--dim);
+}
 .title {
     color: var(--dim);
     font-size: 0.95em;
@@ -433,8 +444,8 @@ img {
     border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
 }
 .project-status.wip {
-    color: #c790ff;
-    border: 1px solid #c084fc86;
+    color: var(--accent);
+    border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
 }
 .project-desc {
     color: var(--dim);
@@ -559,11 +570,6 @@ th {
     right: 1.5rem;
     border-bottom: 1px solid var(--border);
 }
-.homeHeading {
-    display: contents;
-    text-transform: none;
-    letter-spacing: inherit;
-}
 .home {
     text-decoration: none;
     color: var(--fg);
@@ -579,6 +585,12 @@ th {
     margin-bottom: 2rem;
     border-bottom: 1px solid var(--border);
 }
+
+.working-with {
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
 .techList {
     list-style: none;
     padding: 0;

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import GithubActivity from "../components/GithubActivity";
-import Header from "../components/Header";
 import Lightbox from "../components/Lightbox";
 import ProjectCard from "../components/ProjectCard";
 import VisitorCounter from "../components/VisitorCounter";
@@ -19,12 +18,15 @@ export default function ProjectsPage() {
 
     return (
         <>
-            <Header />
             <main>
                 <section className="profile">
                     <img src="https://github.com/JulienLach.png" alt="Julien Lach" className="avatar" />
                     <div className="bio">
                         <div className="title-row">
+                            <h1 className="name">Julien Lach</h1>
+                            <span className="title-separator" aria-hidden="true">
+                                -
+                            </span>
                             <span className="title">Software Developer</span>
                             <a
                                 href="https://www.linkedin.com/company/acai-france/posts/"
@@ -122,7 +124,7 @@ export default function ProjectsPage() {
                         devices, often paired with an MCP server so the tool can be driven with natural language.
                     </p>
                 </section>
-                <section className="intro">
+                <section className="working-with">
                     <h2>Working with</h2>
                     <ul className="techList">
                         {TECH_STACK.map((tech) => (
