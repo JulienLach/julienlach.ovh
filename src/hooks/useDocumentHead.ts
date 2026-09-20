@@ -5,7 +5,7 @@ function setMeta(selector: string, attr: string, value: string) {
 	if (el) el.setAttribute(attr, value);
 }
 
-export function useDocumentHead(title: string, description: string) {
+export function useDocumentHead(title: string, description: string, noIndex = false) {
 	useEffect(() => {
 		document.title = title;
 
@@ -14,9 +14,10 @@ export function useDocumentHead(title: string, description: string) {
 		setMeta('meta[property="og:description"]', 'content', description);
 		setMeta('meta[name="twitter:title"]', 'content', title);
 		setMeta('meta[name="twitter:description"]', 'content', description);
+		setMeta('meta[name="robots"]', 'content', noIndex ? 'noindex, nofollow' : 'index, follow');
 
 		const url = window.location.href;
 		setMeta('meta[property="og:url"]', 'content', url);
 		setMeta('link[rel="canonical"]', 'href', url);
-	}, [title, description]);
+	}, [title, description, noIndex]);
 }

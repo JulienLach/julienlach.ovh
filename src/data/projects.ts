@@ -53,8 +53,14 @@ export const projects: Project[] = [
             {
                 variant: "desktop",
                 screenshots: [
-                    { src: axelormcp1Img, alt: "Axelor MCP screenshot 1" },
-                    { src: axelormcp2Img, alt: "Axelor MCP screenshot 2" },
+                    {
+                        src: axelormcp1Img,
+                        alt: "Claude Desktop chat creating a new CRM lead in Axelor from a natural language request",
+                    },
+                    {
+                        src: axelormcp2Img,
+                        alt: "Claude Desktop MCP settings showing the local Axelor MCP server connected and running",
+                    },
                 ],
             },
         ],
@@ -71,8 +77,14 @@ export const projects: Project[] = [
             {
                 variant: "desktop",
                 screenshots: [
-                    { src: blacksygnus1Img, alt: "BlackSygnus landing" },
-                    { src: blacksygnus2Img, alt: "BlackSygnus dashboard" },
+                    {
+                        src: blacksygnus1Img,
+                        alt: "BlackSygnus landing page pitching centralized risk analysis and action tracking",
+                    },
+                    {
+                        src: blacksygnus2Img,
+                        alt: "BlackSygnus dashboard showing risk matrices, KPIs and breakdowns by category and department",
+                    },
                 ],
             },
         ],
@@ -88,10 +100,19 @@ export const projects: Project[] = [
             {
                 variant: "mobile",
                 screenshots: [
-                    { src: audit1Img, alt: "Audit screenshot 1" },
-                    { src: audit2Img, alt: "Audit screenshot 2" },
-                    { src: audit3Img, alt: "Audit screenshot 3" },
-                    { src: audit4Img, alt: "Audit screenshot 4" },
+                    {
+                        src: audit1Img,
+                        alt: "Audit mobile app home screen with buttons to create a safety or vehicle audit",
+                    },
+                    {
+                        src: audit2Img,
+                        alt: "Audit mobile app checklist form with Bon / Insuffisant / Non concerné ratings",
+                    },
+                    { src: audit3Img, alt: "Audit mobile app list of validated audits" },
+                    {
+                        src: audit4Img,
+                        alt: "Audit mobile app validated report with a button to send it by email",
+                    },
                 ],
             },
         ],
@@ -108,8 +129,14 @@ export const projects: Project[] = [
             {
                 variant: "desktop",
                 screenshots: [
-                    { src: et2i1Img, alt: "et2i website" },
-                    { src: et2i2Img, alt: "et2i quote configurator" },
+                    {
+                        src: et2i1Img,
+                        alt: "ET2i homepage for an industrial engineering firm with a project cost estimator",
+                    },
+                    {
+                        src: et2i2Img,
+                        alt: "ET2i project estimator summarizing a topography and 3D acquisition request",
+                    },
                 ],
             },
         ],
@@ -125,10 +152,22 @@ export const projects: Project[] = [
             {
                 variant: "mobile",
                 screenshots: [
-                    { src: ficheqs1Img, alt: "FicheQS screenshot 1" },
-                    { src: ficheqs4Img, alt: "FicheQS screenshot 4" },
-                    { src: ficheqs3Img, alt: "FicheQS screenshot 3" },
-                    { src: ficheqs2Img, alt: "FicheQS screenshot 2" },
+                    {
+                        src: ficheqs1Img,
+                        alt: "FichesQS mobile app home screen with buttons to create or view quality and safety forms",
+                    },
+                    {
+                        src: ficheqs4Img,
+                        alt: "FichesQS mobile app list of validated quality and safety forms by housing unit",
+                    },
+                    {
+                        src: ficheqs3Img,
+                        alt: "FichesQS validated quality and safety form with a button to send it by email",
+                    },
+                    {
+                        src: ficheqs2Img,
+                        alt: "FichesQS mobile app navigation menu with account and logout options",
+                    },
                 ],
             },
         ],
@@ -144,18 +183,39 @@ export const projects: Project[] = [
             {
                 variant: "desktop",
                 screenshots: [
-                    { src: effitech1Img, alt: "EffiTech screenshot 1" },
-                    { src: effitech2Img, alt: "EffiTech screenshot 2" },
-                    { src: effitech3Img, alt: "EffiTech screenshot 3" },
+                    {
+                        src: effitech1Img,
+                        alt: "EffiTech calendar listing scheduled interventions with client, status and technician columns",
+                    },
+                    {
+                        src: effitech2Img,
+                        alt: "EffiTech intervention detail panel with client, planning and work-to-do information",
+                    },
+                    {
+                        src: effitech3Img,
+                        alt: "EffiTech employee directory showing technicians and their contact details",
+                    },
                 ],
             },
             {
                 variant: "mobile",
                 screenshots: [
-                    { src: effitechmobile4Img, alt: "EffiTech mobile screenshot 4" },
-                    { src: effitechmobile1Img, alt: "EffiTech mobile screenshot 1" },
-                    { src: effitechmobile3Img, alt: "EffiTech mobile screenshot 3" },
-                    { src: effitechmobile2Img, alt: "EffiTech mobile screenshot 2" },
+                    {
+                        src: effitechmobile4Img,
+                        alt: "EffiTech mobile list of appointments color-coded by status",
+                    },
+                    {
+                        src: effitechmobile1Img,
+                        alt: "EffiTech mobile calendar with color-coded appointments for a technician's day",
+                    },
+                    {
+                        src: effitechmobile3Img,
+                        alt: "EffiTech mobile appointment detail with client, address and work description",
+                    },
+                    {
+                        src: effitechmobile2Img,
+                        alt: "EffiTech mobile intervention report with technician and client signature capture",
+                    },
                 ],
             },
         ],

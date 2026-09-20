@@ -1,47 +1,63 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="robots" content="index, follow" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-		<title>Julien Lach</title>
-		<meta name="title" content="Julien Lach" />
-		<meta name="description" content="Notes and projects." />
-		<link rel="canonical" href="https://julienlach.ovh/" />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://julienlach.ovh/" />
-		<meta property="og:title" content="Julien Lach" />
-		<meta property="og:description" content="Notes and projects." />
-		<meta property="og:image" content="https://julienlach.ovh/og-image.png" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Julien Lach" />
-		<meta name="twitter:description" content="Notes and projects." />
-		<meta name="twitter:image" content="https://julienlach.ovh/og-image.png" />
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "Person",
-				"name": "Julien Lach",
-				"jobTitle": "Software Developer",
-				"url": "https://julienlach.ovh/",
-				"sameAs": ["https://github.com/JulienLach", "https://linkedin.com/in/julienlach"]
-			}
-		</script>
+        <title>Julien Lach - Software Developer</title>
+        <meta name="title" content="Julien Lach — Software Developer" />
+        <meta
+            name="description"
+            content="Julien Lach — software developer in France building web apps, automation tools and AI-powered workflows with TypeScript, React and Node.js."
+        />
+        <link rel="canonical" href="https://julienlach.ovh/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://julienlach.ovh/" />
+        <meta property="og:title" content="Julien Lach — Software Developer" />
+        <meta
+            property="og:description"
+            content="Julien Lach — software developer in France building web apps, automation tools and AI-powered workflows with TypeScript, React and Node.js."
+        />
+        <meta property="og:image" content="https://julienlach.ovh/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Julien Lach — Software Developer" />
+        <meta
+            name="twitter:description"
+            content="Julien Lach — software developer in France building web apps, automation tools and AI-powered workflows with TypeScript, React and Node.js."
+        />
+        <meta name="twitter:image" content="https://julienlach.ovh/og-image.png" />
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Julien Lach",
+                "jobTitle": "Software Developer",
+                "url": "https://julienlach.ovh/",
+                "image": "https://github.com/JulienLach.png",
+                "worksFor": {
+                    "@type": "Organization",
+                    "name": "ACAI"
+                },
+                "knowsAbout": ["TypeScript", "React", "Node.js", "PostgreSQL", "Docker", "AI automation"],
+                "sameAs": ["https://github.com/JulienLach", "https://linkedin.com/in/julienlach"]
+            }
+        </script>
 
-		<script>
-			// GitHub Pages SPA fallback: restore the real path redirected by 404.html.
-			(function () {
-				var redirect = sessionStorage.redirect;
-				delete sessionStorage.redirect;
-				if (redirect && redirect !== location.href) {
-					history.replaceState(null, '', redirect);
-				}
-			})();
-		</script>
-	</head>
-	<body style="background: #1f2630">
-		<div id="root"></div>
-		<script type="module" src="/src/main.tsx"></script>
-	</body>
+        <script>
+            // GitHub Pages SPA fallback: restore the real path redirected by 404.html.
+            (function () {
+                var redirect = sessionStorage.redirect;
+                delete sessionStorage.redirect;
+                if (redirect && redirect !== location.href) {
+                    history.replaceState(null, "", redirect);
+                }
+            })();
+        </script>
+    </head>
+    <body style="background: #1f2630">
+        <div id="root"></div>
+        <script type="module" src="/src/main.tsx"></script>
+    </body>
 </html>

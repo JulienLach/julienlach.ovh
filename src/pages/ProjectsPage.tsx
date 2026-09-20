@@ -10,7 +10,10 @@ import { TECH_STACK } from "../data/techStack";
 import { useDocumentHead } from "../hooks/useDocumentHead";
 
 export default function ProjectsPage() {
-    useDocumentHead(`Projects - ${SITE_TITLE}`, "Projects by Julien Lach");
+    useDocumentHead(
+        `${SITE_TITLE} - Software Developer`,
+        "Julien Lach — software developer in France building web apps, automation tools and AI-powered workflows with TypeScript, React and Node.js.",
+    );
 
     const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
 

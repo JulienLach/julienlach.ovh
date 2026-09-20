@@ -4,7 +4,7 @@ import { SITE_TITLE } from '../consts';
 import { useDocumentHead } from '../hooks/useDocumentHead';
 
 export default function NotFoundPage() {
-	useDocumentHead(`Not found - ${SITE_TITLE}`, 'Page not found');
+	useDocumentHead(`Not found - ${SITE_TITLE}`, 'Page not found', true);
 
 	return (
 		<>
