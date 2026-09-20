@@ -118,9 +118,11 @@ export default function ProjectsPage() {
                         for teams and companies going through digitalization.
                     </p>
                     <p>
-                        My recent work spans ERP integrations, SaaS platforms, and progressive web apps, often paired
-                        with an MCP server so the tool can be driven with natural language.
+                        My recent work spans SaaS platforms, ERP integrations, and progressive web apps for mobile
+                        devices, often paired with an MCP server so the tool can be driven with natural language.
                     </p>
+                </section>
+                <section className="intro">
                     <h2>Working with</h2>
                     <ul className="techList">
                         {TECH_STACK.map((tech) => (

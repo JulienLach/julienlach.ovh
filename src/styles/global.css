@@ -575,7 +575,7 @@ th {
 
 /* ProjectsPage */
 .intro {
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     margin-bottom: 2rem;
     border-bottom: 1px solid var(--border);
 }
