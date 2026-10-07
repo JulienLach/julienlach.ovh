@@ -1,11 +1,12 @@
-import audit1Img from "../assets/images/audit_1-portrait.webp";
-import audit2Img from "../assets/images/audit_2-portrait.webp";
-import audit3Img from "../assets/images/audit_3-portrait.webp";
-import audit4Img from "../assets/images/audit_4-portrait.webp";
-import axelormcp1Img from "../assets/images/axelor_mcp1.webp";
-import axelormcp2Img from "../assets/images/axelor_mcp2.webp";
-import blacksygnus1Img from "../assets/images/blacksygnus_1.jpg";
-import blacksygnus2Img from "../assets/images/blacksygnus_2.jpg";
+import audit1Img from "../assets/images/audit_tablet_1.webp";
+import audit2Img from "../assets/images/audit_tablet_2.webp";
+import audit3Img from "../assets/images/audit_tablet_3.webp";
+import audit4Img from "../assets/images/audit_tablet_4.webp";
+import axelormcpArchitectureImg from "../assets/images/axelor_mcp_architecture.webp";
+import blacksygnus1Img from "../assets/images/blacksygnus_1.webp";
+import blacksygnus2Img from "../assets/images/blacksygnus_2.png";
+import blacksygnus3Img from "../assets/images/blacksygnus_3.png";
+import blacksygnus4Img from "../assets/images/blacksygnus_4.png";
 import effitech1Img from "../assets/images/effitech1.webp";
 import effitech2Img from "../assets/images/effitech2.webp";
 import effitech3Img from "../assets/images/effitech3.webp";
@@ -14,7 +15,7 @@ import effitechmobile2Img from "../assets/images/effitechmobile2.webp";
 import effitechmobile3Img from "../assets/images/effitechmobile3.webp";
 import effitechmobile4Img from "../assets/images/effitechmobile4.webp";
 import et2i1Img from "../assets/images/et2i_1.webp";
-import et2i2Img from "../assets/images/et2i_2.webp";
+import et2i2Img from "../assets/images/et2i_2.png";
 import ficheqs1Img from "../assets/images/ficheqs1.webp";
 import ficheqs2Img from "../assets/images/ficheqs2.webp";
 import ficheqs3Img from "../assets/images/ficheqs3.webp";
@@ -26,7 +27,7 @@ export type ProjectStatus = {
 };
 
 export type ScreenshotRow = {
-    variant: "desktop" | "mobile";
+    variant: "desktop" | "tablet" | "mobile";
     screenshots: { src: string; alt: string; width: number; height: number }[];
 };
 
@@ -44,26 +45,20 @@ export const projects: Project[] = [
     {
         id: "axelor-mcp",
         name: "Axelor MCP",
-        statuses: [{ label: "Open source", type: "opensource" }],
+        statuses: [{ label: "Side project", type: "wip" }],
         description:
-            "Local MCP server that lets Claude Desktop query an Axelor instance directly search partners, manage sales orders, invoices, and timesheets through natural language.",
-        tags: ["MCP server", "Claude Desktop", "ERP"],
+            "Serveur MCP local pour interroger une instance Axelor depuis Claude Desktop : partenaires, commandes, factures, feuilles de temps, en langage naturel.",
+        tags: ["Serveur MCP", "Claude Desktop", "ERP", "Open source"],
         link: { href: "https://github.com/JulienLach/axelor-mcp", label: "GitHub" },
         screenshotRows: [
             {
                 variant: "desktop",
                 screenshots: [
                     {
-                        src: axelormcp1Img,
-                        alt: "Claude Desktop chat creating a new CRM lead in Axelor from a natural language request",
-                        width: 1200,
-                        height: 708,
-                    },
-                    {
-                        src: axelormcp2Img,
-                        alt: "Claude Desktop MCP settings showing the local Axelor MCP server connected and running",
-                        width: 1200,
-                        height: 704,
+                        src: axelormcpArchitectureImg,
+                        alt: "Schéma d'architecture du serveur Axelor MCP : Claude Desktop lance le processus Node.js, qui appelle l'un des 33 outils validés par Zod via JSON-RPC sur stdio, lesquels interrogent l'API REST d'Axelor",
+                        width: 2184,
+                        height: 2448,
                     },
                 ],
             },
@@ -74,24 +69,41 @@ export const projects: Project[] = [
         name: "BlackSygnus",
         statuses: [{ label: "Live", type: "live" }],
         description:
-            "SaaS platform to centralize risk analyses, track corrective action plans, and generate DUERP and FMEA reports turning static documents into operational management. I also built an MCP server connecting its risk data to Claude Code, enabling AI-driven analysis and recommendations.",
-        tags: ["Risk assessment", "SaaS", "MCP server"],
-        link: { href: "https://blacksygnus.com", label: "View" },
+            "Plateforme SaaS pour centraliser les analyses de risques, suivre les actions correctives et générer les rapports DUERP et AMDEC. Avec un serveur MCP qui connecte ses données à Claude pour des analyses assistées par l'IA.",
+        tags: ["Analyse de risques", "SaaS", "Serveur MCP"],
+        link: { href: "https://blacksygnus.com", label: "Voir" },
         screenshotRows: [
             {
                 variant: "desktop",
                 screenshots: [
                     {
                         src: blacksygnus1Img,
-                        alt: "BlackSygnus landing page pitching centralized risk analysis and action tracking",
-                        width: 1200,
-                        height: 645,
+                        alt: "Page d'accueil de BlackSygnus présentant l'analyse de risques centralisée et le suivi des actions",
+                        width: 2400,
+                        height: 1350,
                     },
                     {
                         src: blacksygnus2Img,
-                        alt: "BlackSygnus dashboard showing risk matrices, KPIs and breakdowns by category and department",
+                        alt: "Tableau de bord BlackSygnus avec matrices de risques, indicateurs clés et répartitions par famille et par unité",
                         width: 1200,
                         height: 650,
+                    },
+                ],
+            },
+            {
+                variant: "desktop",
+                screenshots: [
+                    {
+                        src: blacksygnus3Img,
+                        alt: "Liste des risques identifiés dans BlackSygnus avec structure, danger, famille, unité de travail et niveaux de risque brut et résiduel",
+                        width: 2528,
+                        height: 1306,
+                    },
+                    {
+                        src: blacksygnus4Img,
+                        alt: "Formulaire de création d'un nouveau risque dans BlackSygnus avec l'évaluation initiale en gravité, fréquence et détection",
+                        width: 2528,
+                        height: 1306,
                     },
                 ],
             },
@@ -102,35 +114,35 @@ export const projects: Project[] = [
         name: "Audit",
         statuses: [{ label: "Live", type: "live" }],
         description:
-            "Mobile-first PWA for digitizing safety forms used in industrial contexts. Fill, validate, and send forms as PDF by email fully offline-capable via service worker.",
+            "PWA mobile-first pour numériser les formulaires de sécurité en milieu industriel. Remplissage, validation et envoi en PDF par e-mail, même hors ligne.",
         tags: ["React", "Node.js", "PostgreSQL", "PWA"],
         screenshotRows: [
             {
-                variant: "mobile",
+                variant: "tablet",
                 screenshots: [
                     {
                         src: audit1Img,
-                        alt: "Audit mobile app home screen with buttons to create a safety or vehicle audit",
-                        width: 700,
-                        height: 1307,
+                        alt: "Écran d'accueil de l'application Audit sur tablette avec les boutons de création et de consultation des audits",
+                        width: 1536,
+                        height: 2048,
                     },
                     {
                         src: audit2Img,
-                        alt: "Audit mobile app checklist form with Bon / Insuffisant / Non concerné ratings",
-                        width: 700,
-                        height: 1307,
+                        alt: "Checklist d'un audit sécurité sur tablette avec les notations Bon / Insuffisant / Non concerné",
+                        width: 1536,
+                        height: 2048,
                     },
                     {
                         src: audit3Img,
-                        alt: "Audit mobile app list of validated audits",
-                        width: 700,
-                        height: 1307,
+                        alt: "Liste des audits validés dans l'application Audit sur tablette",
+                        width: 1536,
+                        height: 2048,
                     },
                     {
                         src: audit4Img,
-                        alt: "Audit mobile app validated report with a button to send it by email",
-                        width: 700,
-                        height: 1307,
+                        alt: "Rapport d'audit validé sur tablette avec un bouton d'envoi par e-mail",
+                        width: 1536,
+                        height: 2048,
                     },
                 ],
             },
@@ -141,22 +153,22 @@ export const projects: Project[] = [
         name: "ET2i",
         statuses: [{ label: "Live", type: "live" }],
         description:
-            "Website redesign for an industrial services company, with a customer portal and an ERP-connected quote configurator to streamline project requests. Tablet-responsive so sales reps can submit project requests directly on-site at the client's location.",
-        tags: ["Web", "ERP integration", "Customer portal"],
-        link: { href: "https://et2i.net/", label: "View" },
+            "Refonte du site d'une entreprise de services industriels, avec portail client et configurateur de devis connecté à l'ERP. Utilisable sur tablette pour saisir les demandes directement chez le client.",
+        tags: ["Web", "Intégration ERP", "Portail client"],
+        link: { href: "https://et2i.net/", label: "Voir" },
         screenshotRows: [
             {
                 variant: "desktop",
                 screenshots: [
                     {
                         src: et2i1Img,
-                        alt: "ET2i homepage for an industrial engineering firm with a project cost estimator",
-                        width: 1200,
-                        height: 698,
+                        alt: "Page d'accueil d'ET2i, bureau d'études industriel, avec un estimateur de coût de projet",
+                        width: 2400,
+                        height: 1350,
                     },
                     {
                         src: et2i2Img,
-                        alt: "ET2i project estimator summarizing a topography and 3D acquisition request",
+                        alt: "Estimateur de projet ET2i résumant une demande de topographie et d'acquisition 3D",
                         width: 1200,
                         height: 650,
                     },
@@ -169,7 +181,7 @@ export const projects: Project[] = [
         name: "FicheQS",
         statuses: [{ label: "Side project", type: "wip" }],
         description:
-            "Mobile-first PWA for digitizing quality and safety forms used in the real estate industry. Fill, validate, and send forms as PDF by email on the go.",
+            "PWA mobile-first pour numériser les fiches qualité et sécurité dans l'immobilier. Remplissage, validation et envoi en PDF par e-mail, sur le terrain.",
         tags: ["React", "Node.js", "PostgreSQL", "PWA"],
         screenshotRows: [
             {
@@ -177,25 +189,25 @@ export const projects: Project[] = [
                 screenshots: [
                     {
                         src: ficheqs1Img,
-                        alt: "FichesQS mobile app home screen with buttons to create or view quality and safety forms",
+                        alt: "Écran d'accueil de l'application mobile FichesQS avec les boutons pour créer ou consulter les fiches qualité et sécurité",
                         width: 700,
                         height: 1379,
                     },
                     {
                         src: ficheqs4Img,
-                        alt: "FichesQS mobile app list of validated quality and safety forms by housing unit",
+                        alt: "Liste des fiches qualité et sécurité validées par logement dans l'application mobile FichesQS",
                         width: 700,
                         height: 1379,
                     },
                     {
                         src: ficheqs3Img,
-                        alt: "FichesQS validated quality and safety form with a button to send it by email",
+                        alt: "Fiche qualité et sécurité validée dans FichesQS avec un bouton d'envoi par e-mail",
                         width: 700,
                         height: 1379,
                     },
                     {
                         src: ficheqs2Img,
-                        alt: "FichesQS mobile app navigation menu with account and logout options",
+                        alt: "Menu de navigation de l'application mobile FichesQS avec les options de compte et de déconnexion",
                         width: 700,
                         height: 1379,
                     },
@@ -208,7 +220,7 @@ export const projects: Project[] = [
         name: "EffiTech",
         statuses: [{ label: "Side project", type: "wip" }],
         description:
-            "Field service management PWA for scheduling technician interventions, managing clients and employees, and generating signed reports with technical documents.",
+            "PWA de gestion d'interventions terrain : planning des techniciens, clients, employés et rapports signés avec documents techniques.",
         tags: ["React", "Node.js", "PostgreSQL", "Docker"],
         screenshotRows: [
             {
@@ -216,19 +228,19 @@ export const projects: Project[] = [
                 screenshots: [
                     {
                         src: effitech1Img,
-                        alt: "EffiTech calendar listing scheduled interventions with client, status and technician columns",
+                        alt: "Calendrier EffiTech listant les interventions planifiées avec les colonnes client, statut et technicien",
                         width: 1200,
                         height: 646,
                     },
                     {
                         src: effitech2Img,
-                        alt: "EffiTech intervention detail panel with client, planning and work-to-do information",
+                        alt: "Panneau de détail d'une intervention EffiTech avec les informations client, planning et travaux à réaliser",
                         width: 1200,
                         height: 647,
                     },
                     {
                         src: effitech3Img,
-                        alt: "EffiTech employee directory showing technicians and their contact details",
+                        alt: "Annuaire des employés EffiTech présentant les techniciens et leurs coordonnées",
                         width: 1200,
                         height: 646,
                     },
@@ -239,25 +251,25 @@ export const projects: Project[] = [
                 screenshots: [
                     {
                         src: effitechmobile4Img,
-                        alt: "EffiTech mobile list of appointments color-coded by status",
+                        alt: "Liste mobile EffiTech des rendez-vous, codés par couleur selon le statut",
                         width: 700,
                         height: 1379,
                     },
                     {
                         src: effitechmobile1Img,
-                        alt: "EffiTech mobile calendar with color-coded appointments for a technician's day",
+                        alt: "Calendrier mobile EffiTech avec les rendez-vous colorés de la journée d'un technicien",
                         width: 700,
                         height: 1379,
                     },
                     {
                         src: effitechmobile3Img,
-                        alt: "EffiTech mobile appointment detail with client, address and work description",
+                        alt: "Détail d'un rendez-vous mobile EffiTech avec client, adresse et description des travaux",
                         width: 700,
                         height: 1379,
                     },
                     {
                         src: effitechmobile2Img,
-                        alt: "EffiTech mobile intervention report with technician and client signature capture",
+                        alt: "Rapport d'intervention mobile EffiTech avec signature du technicien et du client",
                         width: 700,
                         height: 1379,
                     },

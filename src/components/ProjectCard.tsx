@@ -1,6 +1,12 @@
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
 import type { Project } from '../data/projects';
 
+const SCREENSHOT_CLASS = {
+	desktop: 'project-screenshot-desktop',
+	tablet: 'project-screenshot-tablet',
+	mobile: 'project-screenshot-mobile',
+} as const;
+
 type Props = {
 	project: Project;
 	index: number;
@@ -26,7 +32,7 @@ export default function ProjectCard({ project, index, onOpenLightbox }: Props) {
 								width={shot.width}
 								height={shot.height}
 								loading="lazy"
-								className={row.variant === 'desktop' ? 'project-screenshot-desktop' : 'project-screenshot-mobile'}
+								className={SCREENSHOT_CLASS[row.variant]}
 							/>
 						</div>
 					))}

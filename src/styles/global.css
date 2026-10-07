@@ -217,7 +217,7 @@ img {
 }
 .title {
     color: var(--dim);
-    font-size: 0.95em;
+    font-size: 1.1em;
 }
 .stack {
     color: var(--dim);
@@ -368,6 +368,18 @@ img {
     height: auto;
     border-radius: 4px;
     display: block;
+}
+.project-screenshot-tablet {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+/* Cadre de tablette simulé : lunette sombre + coins arrondis autour de l'écran */
+.screenshot-wrap:has(.project-screenshot-tablet) {
+    border: 3px solid #0d0d0d;
+    border-radius: 10px;
+    background: #0d0d0d;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14);
 }
 .project-card {
     border: 1px solid var(--border);
