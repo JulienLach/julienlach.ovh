@@ -10,8 +10,8 @@ import { useDocumentHead } from "../hooks/useDocumentHead";
 
 export default function ProjectsPage() {
     useDocumentHead(
-        `${SITE_TITLE} - Développeur logiciel`,
-        "Julien Lach - développeur logiciel en France. Je conçois des applications web, des outils d'automatisation et des workflows assistés par l'IA avec TypeScript, React et Node.js.",
+        `${SITE_TITLE} - Développeur`,
+        "Julien Lach - développeur d'applications en France. Je conçois des applications web, des outils d'automatisation et des workflows assistés par l'IA avec TypeScript, React et Node.js.",
     );
 
     const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
