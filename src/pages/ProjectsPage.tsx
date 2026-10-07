@@ -3,6 +3,7 @@ import GithubActivity from "../components/GithubActivity";
 import Lightbox from "../components/Lightbox";
 import ProjectCard from "../components/ProjectCard";
 import VisitorCounter from "../components/VisitorCounter";
+import avatarImg from "../assets/images/avatar.webp";
 import { SITE_TITLE } from "../consts";
 import { projects } from "../data/projects";
 import { TECH_STACK } from "../data/techStack";
@@ -20,7 +21,7 @@ export default function ProjectsPage() {
         <>
             <main>
                 <section className="profile">
-                    <img src="https://github.com/JulienLach.png" alt="Julien Lach" className="avatar" />
+                    <img src={avatarImg} alt="Julien Lach" width={115} height={115} className="avatar" />
                     <div className="bio">
                         <div className="title-row">
                             <h1 className="name">Julien Lach</h1>
