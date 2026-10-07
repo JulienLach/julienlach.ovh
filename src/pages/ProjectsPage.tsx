@@ -2,7 +2,6 @@ import { useState } from "react";
 import GithubActivity from "../components/GithubActivity";
 import Lightbox from "../components/Lightbox";
 import ProjectCard from "../components/ProjectCard";
-import VisitorCounter from "../components/VisitorCounter";
 import avatarImg from "../assets/images/avatar.webp";
 import { SITE_TITLE } from "../consts";
 import { projects } from "../data/projects";
@@ -144,7 +143,6 @@ export default function ProjectsPage() {
                         />
                     ))}
                 </ul>
-                <VisitorCounter />
             </main>
             <Lightbox image={lightboxImage} onClose={() => setLightboxImage(null)} />
         </>
