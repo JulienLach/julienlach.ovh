@@ -10,8 +10,8 @@ import { useDocumentHead } from "../hooks/useDocumentHead";
 
 export default function ProjectsPage() {
     useDocumentHead(
-        `${SITE_TITLE} - Software Developer`,
-        "Julien Lach - software developer in France building web apps, automation tools and AI-powered workflows with TypeScript, React and Node.js.",
+        `${SITE_TITLE} - Développeur logiciel`,
+        "Julien Lach - développeur logiciel en France. Je conçois des applications web, des outils d'automatisation et des workflows assistés par l'IA avec TypeScript, React et Node.js.",
     );
 
     const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
@@ -27,14 +27,14 @@ export default function ProjectsPage() {
                             <span className="title-separator" aria-hidden="true">
                                 -
                             </span>
-                            <span className="title">Software Developer</span>
+                            <span className="title">Développeur</span>
                             <a
                                 href="https://www.linkedin.com/company/acai-france/posts/"
                                 target="_blank"
                                 rel="noopener"
                                 className="work-status"
                             >
-                                Currently working at ACAI
+                                Actuellement chez ACAI
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="12"
@@ -52,8 +52,7 @@ export default function ProjectsPage() {
                             </a>
                         </div>
                         <span className="stack">
-                            Building web applications that help businesses run better : tools, workflows, and AI
-                            automations.
+                            Applications web, workflows et automatisations IA pour les entreprises.
                         </span>
                         <div className="social">
                             <a href="https://github.com/JulienLach" target="_blank" rel="noopener" aria-label="GitHub">
@@ -116,23 +115,24 @@ export default function ProjectsPage() {
                 </section>
                 <section className="intro">
                     <p>
-                        I'm a Software Developer based in France, building tools, workflows, and AI-powered automations
-                        for teams and companies going through digitalization.
+                        Développeur d'applications basé en France, j'accompagne les équipes et les entreprises dans leur
+                        digitalisation : je conçois, développe et déploie des outils sur mesure qui répondent à de
+                        vrais besoins métier.
                     </p>
                     <p>
-                        My recent work spans SaaS platforms, ERP integrations, and progressive web apps for mobile
-                        devices, often paired with an MCP server so the tool can be driven with natural language.
+                        Mes derniers projets : plateformes SaaS, intégrations ERP et PWA mobiles. J'y ajoute souvent un
+                        serveur MCP, pour que l'outil se pilote aussi en langage naturel.
                     </p>
                 </section>
                 <section className="working-with">
-                    <h2>Working with</h2>
+                    <h2>Technologies</h2>
                     <ul className="techList">
                         {TECH_STACK.map((tech) => (
                             <li key={tech}>{tech}</li>
                         ))}
                     </ul>
                 </section>
-                <h2>Projects</h2>
+                <h2>Projets</h2>
                 <ul className="project-list">
                     {projects.map((project, index) => (
                         <ProjectCard

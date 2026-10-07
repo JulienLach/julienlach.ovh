@@ -4,15 +4,15 @@ import { SITE_TITLE } from '../consts';
 import { useDocumentHead } from '../hooks/useDocumentHead';
 
 export default function NotFoundPage() {
-	useDocumentHead(`Not found - ${SITE_TITLE}`, 'Page not found', true);
+	useDocumentHead(`Page introuvable - ${SITE_TITLE}`, 'Page introuvable', true);
 
 	return (
 		<>
 			<Header />
 			<main>
-				<p>Page not found.</p>
+				<p>Page introuvable.</p>
 				<p>
-					<Link to="/">← back to index</Link>
+					<Link to="/">← retour à l&apos;accueil</Link>
 				</p>
 			</main>
 		</>

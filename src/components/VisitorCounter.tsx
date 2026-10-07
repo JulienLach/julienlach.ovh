@@ -18,5 +18,5 @@ export default function VisitorCounter() {
 
 	if (visits === null) return null;
 
-	return <p className="visitor-counter">{visits.toLocaleString()} visits</p>;
+	return <p className="visitor-counter">{visits.toLocaleString('fr-FR')} visites</p>;
 }

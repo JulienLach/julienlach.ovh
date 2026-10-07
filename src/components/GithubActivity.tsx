@@ -4,16 +4,16 @@ const EVENTS_URL = 'https://api.github.com/users/JulienLach/events/public';
 
 function formatRelativeTime(date: Date): string {
 	const seconds = Math.floor((Date.now() - date.getTime()) / 1000);
-	if (seconds < 60) return 'just now';
+	if (seconds < 60) return "à l'instant";
 
 	const minutes = Math.floor(seconds / 60);
-	if (minutes < 60) return `${minutes}m ago`;
+	if (minutes < 60) return `il y a ${minutes} min`;
 
 	const hours = Math.floor(minutes / 60);
-	if (hours < 24) return `${hours}h ago`;
+	if (hours < 24) return `il y a ${hours} h`;
 
 	const days = Math.floor(hours / 24);
-	return `${days}d ago`;
+	return `il y a ${days} j`;
 }
 
 export default function GithubActivity() {
@@ -36,7 +36,7 @@ export default function GithubActivity() {
 
 	return (
 		<a href="https://github.com/JulienLach" target="_blank" rel="noopener" className="github-activity">
-			Active on GitHub {lastActive}
+			Actif sur GitHub {lastActive}
 		</a>
 	);
 }
