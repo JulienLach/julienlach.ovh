@@ -23,7 +23,7 @@ import ficheqs4Img from "../assets/images/ficheqs4.webp";
 
 export type ProjectStatus = {
     label: string;
-    type: "opensource" | "live" | "wip";
+    type: "live" | "wip";
 };
 
 export type ScreenshotRow = {
