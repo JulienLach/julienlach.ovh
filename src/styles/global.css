@@ -12,6 +12,9 @@
     --dim: #dadada;
     --accent: #00b4d8;
     --border: #4d4d4d;
+    /* Coins chanfreinés façon interface EVE (haut-gauche et bas-droit coupés) */
+    --chamfer-sm: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
+    --chamfer-lg: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
 }
 
 ::selection {
@@ -320,7 +323,6 @@ img {
     width: 0;
     position: relative;
     overflow: hidden;
-    border-radius: 4px;
     cursor: pointer;
 }
 .screenshot-wrap img {
@@ -366,7 +368,6 @@ img {
 .project-screenshot-mobile {
     width: 100%;
     height: auto;
-    border-radius: 4px;
     display: block;
 }
 .project-screenshot-tablet {
@@ -383,7 +384,7 @@ img {
 }
 .project-card {
     border: 1px solid var(--border);
-    clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+    clip-path: var(--chamfer-lg);
     padding: 1rem 1.2rem;
     transition:
         border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
@@ -482,7 +483,7 @@ img {
     font-size: 0.8em;
     color: var(--dim);
     border: 1px solid var(--border);
-    clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
+    clip-path: var(--chamfer-sm);
     padding: 0.15em 0.5em;
 }
 .project-link {
@@ -493,7 +494,7 @@ img {
     text-decoration: none;
     color: var(--dim);
     border: 1px solid var(--border);
-    clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
+    clip-path: var(--chamfer-sm);
     padding: 0.15em 0.5em;
     white-space: nowrap;
     margin-left: auto;
@@ -523,7 +524,6 @@ img {
 #lightbox img {
     max-width: 90vw;
     max-height: 90vh;
-    border-radius: 6px;
     object-fit: contain;
     transform: scale(0.92);
     transition: transform 0.2s ease;
@@ -607,6 +607,6 @@ th {
     font-size: 0.85em;
     color: var(--accent);
     border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
-    border-radius: 4px;
+    clip-path: var(--chamfer-sm);
     padding: 0.15em 0.5em;
 }
