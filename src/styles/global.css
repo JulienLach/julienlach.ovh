@@ -8,10 +8,11 @@
 
 :root {
     --bg: #1f2630;
-    --fg: #cccccc;
-    --dim: #dadada;
+    --fg: #d4d8dd;
+    --dim: #9aa1ab;
     --accent: #00b4d8;
     --border: #4d4d4d;
+    --border-light: #6b7380;
     /* Coins chanfreinés façon interface EVE (haut-gauche et bas-droit coupés) */
     --chamfer-sm: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
     --chamfer-lg: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
@@ -216,14 +217,14 @@ img {
     margin: 0;
 }
 .title-separator {
-    color: var(--dim);
+    color: var(--fg);
 }
 .title {
-    color: var(--dim);
+    color: var(--fg);
     font-size: 1.1em;
 }
 .stack {
-    color: var(--dim);
+    color: var(--fg);
 }
 .title-row {
     display: flex;
@@ -263,7 +264,7 @@ img {
     margin-top: 0.4rem;
 }
 .social a {
-    color: var(--dim);
+    color: var(--fg);
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -281,7 +282,7 @@ img {
     gap: 0.35em;
     width: fit-content;
     font-size: 0.8em;
-    color: var(--dim);
+    color: var(--fg);
     text-decoration: none;
 }
 .github-activity::before {
@@ -383,7 +384,7 @@ img {
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14);
 }
 .project-card {
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-light);
     clip-path: var(--chamfer-lg);
     padding: 1rem 1.2rem;
     transition:
@@ -461,7 +462,7 @@ img {
     border: 1px solid #ff8c1a5b;
 }
 .project-desc {
-    color: var(--dim);
+    color: var(--fg);
     margin: 0 0 0.75rem;
     line-height: 1.6;
 }
@@ -481,8 +482,8 @@ img {
 }
 .project-tags li {
     font-size: 0.8em;
-    color: var(--dim);
-    border: 1px solid var(--border);
+    color: var(--fg);
+    border: 1px solid var(--border-light);
     clip-path: var(--chamfer-sm);
     padding: 0.15em 0.5em;
 }
@@ -492,8 +493,8 @@ img {
     gap: 0.3em;
     font-size: 0.8em;
     text-decoration: none;
-    color: var(--dim);
-    border: 1px solid var(--border);
+    color: var(--fg);
+    border: 1px solid var(--border-light);
     clip-path: var(--chamfer-sm);
     padding: 0.15em 0.5em;
     white-space: nowrap;
