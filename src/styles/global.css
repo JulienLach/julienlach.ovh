@@ -384,6 +384,7 @@ img {
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14);
 }
 .project-card {
+    position: relative;
     border: 1px solid var(--border-light);
     clip-path: var(--chamfer-lg);
     padding: 1rem 1.2rem;
@@ -413,6 +414,41 @@ img {
 @media (prefers-reduced-motion: no-preference) {
     .project-card:hover {
         transform: translateY(-2px);
+    }
+}
+/* Crochets de ciblage façon EVE : 4 coins en L qui se resserrent sur la carte au survol.
+   Inset de 7px : le plus près du bord sans être rogné par le coin chanfreiné (14px) de la carte. */
+.project-card::after {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    pointer-events: none;
+    opacity: 0;
+    --bracket: linear-gradient(var(--accent), var(--accent));
+    background:
+        var(--bracket) left top / 12px 1px no-repeat,
+        var(--bracket) left top / 1px 12px no-repeat,
+        var(--bracket) right top / 12px 1px no-repeat,
+        var(--bracket) right top / 1px 12px no-repeat,
+        var(--bracket) left bottom / 12px 1px no-repeat,
+        var(--bracket) left bottom / 1px 12px no-repeat,
+        var(--bracket) right bottom / 12px 1px no-repeat,
+        var(--bracket) right bottom / 1px 12px no-repeat;
+    filter: drop-shadow(0 0 3px var(--accent));
+    transition: opacity 0.2s ease;
+}
+.project-card:hover::after {
+    opacity: 1;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .project-card::after {
+        transform: scale(1.04);
+        transition:
+            opacity 0.2s ease,
+            transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .project-card:hover::after {
+        transform: scale(1);
     }
 }
 .project-header {
