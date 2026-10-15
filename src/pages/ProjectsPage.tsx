@@ -134,11 +134,10 @@ export default function ProjectsPage() {
                 </section>
                 <h2>Projets</h2>
                 <ul className="project-list">
-                    {projects.map((project, index) => (
+                    {projects.map((project) => (
                         <ProjectCard
                             key={project.id}
                             project={project}
-                            index={index}
                             onOpenLightbox={setLightboxImage}
                         />
                     ))}

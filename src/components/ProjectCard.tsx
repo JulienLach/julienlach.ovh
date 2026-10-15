@@ -9,11 +9,10 @@ const SCREENSHOT_CLASS = {
 
 type Props = {
 	project: Project;
-	index: number;
 	onOpenLightbox: (image: { src: string; alt: string }) => void;
 };
 
-export default function ProjectCard({ project, index, onOpenLightbox }: Props) {
+export default function ProjectCard({ project, onOpenLightbox }: Props) {
 	const { ref, visible } = useRevealOnScroll<HTMLLIElement>();
 
 	return (
@@ -39,7 +38,6 @@ export default function ProjectCard({ project, index, onOpenLightbox }: Props) {
 				</div>
 			))}
 			<div className="project-header">
-				<span className="project-index">{String(index + 1).padStart(2, '0')}</span>
 				<h3 className="project-name">{project.name}</h3>
 				{project.statuses.map((status) => (
 					<span className={`project-status ${status.type}`} key={status.label}>
