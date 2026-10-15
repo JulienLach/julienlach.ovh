@@ -20,10 +20,11 @@ import ficheqs1Img from "../assets/images/ficheqs1.webp";
 import ficheqs2Img from "../assets/images/ficheqs2.webp";
 import ficheqs3Img from "../assets/images/ficheqs3.webp";
 import ficheqs4Img from "../assets/images/ficheqs4.webp";
+import guardius1Img from "../assets/images/guardius_1.webp";
 
 export type ProjectStatus = {
     label: string;
-    type: "live" | "wip";
+    type: "live" | "wip" | "progress";
 };
 
 export type ScreenshotRow = {
@@ -42,6 +43,30 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+    {
+        id: "guardius",
+        name: "Guardius",
+        statuses: [
+            { label: "Side project", type: "wip" },
+            { label: "Work in progress", type: "progress" },
+        ],
+        description:
+            "SaaS de signalement HSE pour les TPE/PME du BTP, de l'industrie et de la logistique. Les salariés signalent presque-accidents et situations dangereuses en moins d'une minute via un QR code, sans compte ; les référents HSE instruisent, définissent les actions correctives et suivent jusqu'à la clôture.",
+        tags: ["SaaS", "Multi-tenant", "PWA", "Santé-sécurité"],
+        screenshotRows: [
+            {
+                variant: "desktop",
+                screenshots: [
+                    {
+                        src: guardius1Img,
+                        alt: "Page d'accueil de Guardius présentant le signalement HSE pour les équipes terrain, avec un aperçu du tableau de bord et du formulaire de signalement mobile",
+                        width: 2400,
+                        height: 1350,
+                    },
+                ],
+            },
+        ],
+    },
     {
         id: "axelor-mcp",
         name: "Axelor MCP",
