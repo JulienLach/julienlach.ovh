@@ -64,7 +64,11 @@ body {
         Roboto,
         Arial,
         sans-serif;
-    background: repeating-linear-gradient(rgba(255, 255, 255, 0.012) 0px, transparent 1px, transparent 5px), var(--bg);
+    background:
+        repeating-linear-gradient(rgba(255, 255, 255, 0.012) 0px, transparent 1px, transparent 5px),
+        radial-gradient(ellipse 80% 50% at 50% 0%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 70%),
+        linear-gradient(180deg, #232b36, #1a2029),
+        var(--bg);
     color: var(--fg);
     margin: 0;
     padding: 0;
