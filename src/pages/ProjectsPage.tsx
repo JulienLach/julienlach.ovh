@@ -34,7 +34,7 @@ export default function ProjectsPage() {
                                 rel="noopener"
                                 className="work-status"
                             >
-                                Actuellement chez ACAI
+                                En poste chez ACAI
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="12"
@@ -52,7 +52,7 @@ export default function ProjectsPage() {
                             </a>
                         </div>
                         <span className="stack">
-                            Applications web, workflows et automatisations IA pour les entreprises.
+                            Applications web, workflows et intégrations IA pour les entreprises.
                         </span>
                         <div className="social">
                             <a href="https://github.com/JulienLach" target="_blank" rel="noopener" aria-label="GitHub">
@@ -116,8 +116,8 @@ export default function ProjectsPage() {
                 <section className="intro">
                     <p>
                         Développeur d'applications basé en France, j'accompagne les équipes et les entreprises dans leur
-                        digitalisation : je conçois, développe et déploie des outils sur mesure qui répondent à de
-                        vrais besoins métier.
+                        digitalisation : je conçois, développe et déploie des outils sur mesure qui répondent à de vrais
+                        besoins métier.
                     </p>
                     <p>
                         Mes derniers projets : plateformes SaaS, intégrations ERP et PWA mobiles. J'y ajoute souvent un
