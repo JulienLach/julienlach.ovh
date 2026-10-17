@@ -19,6 +19,7 @@ export const TECH_STACK = [
     "GitHub Actions",
     "Claude Code CLI",
     "OpenCode",
-    "Open Source Harnesses",
+    "Orca (ADE)",
     "Obsidian",
+    "Playwright",
 ];
