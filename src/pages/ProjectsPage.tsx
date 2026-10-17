@@ -4,6 +4,7 @@ import Lightbox from "../components/Lightbox";
 import ProjectCard from "../components/ProjectCard";
 import avatarImg from "../assets/images/avatar.webp";
 import { SITE_TITLE } from "../consts";
+import { EDUCATION } from "../data/education";
 import { projects } from "../data/projects";
 import { TECH_STACK } from "../data/techStack";
 import { useDocumentHead } from "../hooks/useDocumentHead";
@@ -129,6 +130,17 @@ export default function ProjectsPage() {
                     <ul className="techList">
                         {TECH_STACK.map((tech) => (
                             <li key={tech}>{tech}</li>
+                        ))}
+                    </ul>
+                </section>
+                <section className="education">
+                    <h2>Formation</h2>
+                    <ul className="education-list">
+                        {EDUCATION.map((degree) => (
+                            <li key={degree.title}>
+                                <span>{degree.title}</span>
+                                <span className="education-level">{degree.level}</span>
+                            </li>
                         ))}
                     </ul>
                 </section>

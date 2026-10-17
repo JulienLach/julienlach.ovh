@@ -617,15 +617,17 @@ th {
 }
 
 /* ProjectsPage */
-.intro {
-    padding-bottom: 1rem;
+/* Sections séparées par un trait : même espace au-dessus et en dessous du trait */
+.intro,
+.working-with,
+.education {
+    padding-bottom: 2rem;
     margin-bottom: 2rem;
     border-bottom: 1px solid var(--border);
 }
-
-.working-with {
-    padding-bottom: 1rem;
-    margin-bottom: 2rem;
+/* Le dernier paragraphe de l'intro ne doit pas ajouter sa marge à l'espace avant le trait */
+.intro p:last-child {
+    margin-bottom: 0;
 }
 
 .techList {
@@ -638,6 +640,28 @@ th {
 }
 .techList li {
     font-size: 0.85em;
+    color: var(--accent);
+    border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+    clip-path: var(--chamfer-sm);
+    padding: 0.15em 0.5em;
+}
+
+.education-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.education-list li {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+}
+.education-level {
+    font-size: 0.8em;
     color: var(--accent);
     border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
     clip-path: var(--chamfer-sm);
