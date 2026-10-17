@@ -194,7 +194,7 @@ img {
     align-items: flex-start;
     padding: 1.7rem 0;
     border-bottom: 1px solid var(--border);
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
 }
 .avatar {
     width: 115px;
@@ -621,8 +621,8 @@ th {
 .intro,
 .working-with,
 .education {
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
     border-bottom: 1px solid var(--border);
 }
 /* Le dernier paragraphe de l'intro ne doit pas ajouter sa marge à l'espace avant le trait */
