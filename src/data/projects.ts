@@ -2,7 +2,10 @@ import audit1Img from "../assets/images/audit_tablet_1.webp";
 import audit2Img from "../assets/images/audit_tablet_2.webp";
 import audit3Img from "../assets/images/audit_tablet_3.webp";
 import audit4Img from "../assets/images/audit_tablet_4.webp";
+import axelormcpActiviteSankeyImg from "../assets/images/axelor_mcp_activite_sankey.webp";
 import axelormcpArchitectureImg from "../assets/images/axelor_mcp_architecture.webp";
+import axelormcpCaParEquipeImg from "../assets/images/axelor_mcp_ca_par_equipe.webp";
+import axelormcpProfilClientsImg from "../assets/images/axelor_mcp_profil_clients.webp";
 import blacksygnus1Img from "../assets/images/blacksygnus_1.webp";
 import blacksygnus2Img from "../assets/images/blacksygnus_2.png";
 import blacksygnus3Img from "../assets/images/blacksygnus_3.png";
@@ -84,6 +87,29 @@ export const projects: Project[] = [
                         alt: "Schéma d'architecture du serveur Axelor MCP : Claude Desktop lance le processus Node.js, qui appelle l'un des 33 outils validés par Zod via JSON-RPC sur stdio, lesquels interrogent l'API REST d'Axelor",
                         width: 2184,
                         height: 2448,
+                    },
+                    {
+                        src: axelormcpActiviteSankeyImg,
+                        alt: "Diagramme sankey généré par Claude via l'outil render_diagram : activité de la semaine répartie entre commandes confirmées et devis en attente, puis par client (données anonymisées)",
+                        width: 1600,
+                        height: 900,
+                    },
+                ],
+            },
+            {
+                variant: "desktop",
+                screenshots: [
+                    {
+                        src: axelormcpProfilClientsImg,
+                        alt: "Diagramme radar généré par Claude via l'outil render_diagram : profil des principaux clients selon leur part de l'activité, du commandé, du devisé et des documents (données anonymisées)",
+                        width: 1600,
+                        height: 900,
+                    },
+                    {
+                        src: axelormcpCaParEquipeImg,
+                        alt: "Treemap généré par Claude via l'outil render_diagram : CA facturé de l'année réparti par équipe (données anonymisées)",
+                        width: 1600,
+                        height: 900,
                     },
                 ],
             },
