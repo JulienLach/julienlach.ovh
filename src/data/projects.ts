@@ -72,8 +72,8 @@ export const projects: Project[] = [
         name: "Axelor MCP",
         statuses: [{ label: "Side project", type: "wip" }],
         description:
-            "Serveur MCP local pour interroger une instance Axelor depuis Claude Desktop : partenaires, commandes, factures, feuilles de temps, en langage naturel.",
-        tags: ["Serveur MCP", "Claude Desktop", "ERP", "Open source"],
+            "Serveur MCP local pour interroger Axelor depuis Claude Desktop / Claude code CLI : partenaires, commandes, factures, feuilles de temps et générer des dashboards de suivis complets.",
+        tags: ["Serveur MCP", "Claude Desktop / Claude code CLI", "ERP", "Open source"],
         link: { href: "https://github.com/JulienLach/axelor-mcp", label: "GitHub" },
         screenshotRows: [
             {
