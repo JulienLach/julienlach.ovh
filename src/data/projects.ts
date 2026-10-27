@@ -56,6 +56,7 @@ export const projects: Project[] = [
         description:
             "SaaS de signalement HSE pour les TPE/PME du BTP, de l'industrie et de la logistique. Les salariés signalent presque-accidents et situations dangereuses en moins d'une minute via un QR code, sans compte ; les référents HSE instruisent, définissent les actions correctives et suivent jusqu'à la clôture.",
         tags: ["SaaS", "Multi-tenant", "PWA", "Santé-sécurité"],
+        link: { href: "https://guardius.fr", label: "Voir" },
         screenshotRows: [
             {
                 variant: "desktop",
