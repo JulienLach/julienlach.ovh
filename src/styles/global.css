@@ -426,10 +426,6 @@ img {
     color: var(--accent);
     border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
 }
-.project-status.progress {
-    color: #ff8c1a;
-    border: 1px solid #ff8c1a5b;
-}
 .project-desc {
     color: var(--fg);
     margin: 0 0 0.75rem;

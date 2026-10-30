@@ -27,7 +27,7 @@ import guardius1Img from "../assets/images/guardius_1.webp";
 
 export type ProjectStatus = {
     label: string;
-    type: "live" | "wip" | "progress";
+    type: "live" | "wip";
 };
 
 export type ScreenshotRow = {
@@ -51,7 +51,7 @@ export const projects: Project[] = [
         name: "Guardius",
         statuses: [
             { label: "Side project", type: "wip" },
-            { label: "Work in progress", type: "progress" },
+            { label: "Live", type: "live" },
         ],
         description:
             "SaaS de signalement HSE pour les TPE/PME du BTP, de l'industrie et de la logistique. Les salariés signalent presque-accidents et situations dangereuses en moins d'une minute via un QR code, sans compte ; les référents HSE instruisent, définissent les actions correctives et suivent jusqu'à la clôture.",
