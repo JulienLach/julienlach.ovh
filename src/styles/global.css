@@ -426,6 +426,10 @@ img {
     color: var(--accent);
     border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
 }
+.project-status.opensource {
+    color: #be9fff;
+    border: 1px solid #be9fff5b;
+}
 .project-desc {
     color: var(--fg);
     margin: 0 0 0.75rem;

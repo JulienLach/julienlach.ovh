@@ -27,7 +27,7 @@ import guardius1Img from "../assets/images/guardius_1.webp";
 
 export type ProjectStatus = {
     label: string;
-    type: "live" | "wip";
+    type: "live" | "wip" | "opensource";
 };
 
 export type ScreenshotRow = {
@@ -55,7 +55,7 @@ export const projects: Project[] = [
         ],
         description:
             "SaaS de signalement HSE pour les TPE/PME du BTP, de l'industrie et de la logistique. Les salariés signalent presque-accidents et situations dangereuses en moins d'une minute via un QR code, sans compte ; les référents HSE instruisent, définissent les actions correctives et suivent jusqu'à la clôture.",
-        tags: ["SaaS", "Multi-tenant", "PWA", "Santé-sécurité"],
+        tags: ["SaaS", "Multi-tenant", "PWA", "Santé-sécurité", "Serveur MCP"],
         link: { href: "https://guardius.fr", label: "Voir" },
         screenshotRows: [
             {
@@ -74,10 +74,13 @@ export const projects: Project[] = [
     {
         id: "axelor-mcp",
         name: "Axelor MCP",
-        statuses: [{ label: "Side project", type: "wip" }],
+        statuses: [
+            { label: "Side project", type: "wip" },
+            { label: "Open source", type: "opensource" },
+        ],
         description:
             "Serveur MCP local pour interroger Axelor depuis Claude Desktop / Claude code CLI : partenaires, commandes, factures, feuilles de temps et générer des dashboards de suivis complets.",
-        tags: ["Serveur MCP", "Claude Desktop / Claude code CLI", "ERP", "Open source"],
+        tags: ["Serveur MCP", "ERP", "Dashboard", "Automatisation"],
         link: { href: "https://github.com/JulienLach/axelor-mcp", label: "GitHub" },
         screenshotRows: [
             {
