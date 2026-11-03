@@ -128,7 +128,11 @@ export default function ProjectsPage() {
                     <h2>Technologies</h2>
                     <ul className="techList">
                         {TECH_STACK.map((tech) => (
-                            <li key={tech}>{tech}</li>
+                            <li key={tech.name}>
+                                <a href={tech.href} target="_blank" rel="noopener">
+                                    {tech.name}
+                                </a>
+                            </li>
                         ))}
                     </ul>
                 </section>
