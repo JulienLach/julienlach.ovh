@@ -115,9 +115,9 @@ export default function ProjectsPage() {
                 </section>
                 <section className="intro">
                     <p>
-                        Développeur d'applications basé en France, j'accompagne les équipes et les entreprises dans leur
-                        digitalisation : je conçois, développe et déploie des outils sur mesure qui répondent à de vrais
-                        besoins métier.
+                        Développeur d'applications basé en France, j'accompagne les équipes et les entreprises dans
+                        l'évolution de leurs process : je conçois, développe et déploie des outils sur mesure qui
+                        répondent à de vrais besoins métier.
                     </p>
                     <p>
                         Mes derniers projets : plateformes SaaS, intégrations ERP et PWA mobiles. J'y ajoute souvent un
@@ -139,11 +139,7 @@ export default function ProjectsPage() {
                 <h2>Projets</h2>
                 <ul className="project-list">
                     {projects.map((project) => (
-                        <ProjectCard
-                            key={project.id}
-                            project={project}
-                            onOpenLightbox={setLightboxImage}
-                        />
+                        <ProjectCard key={project.id} project={project} onOpenLightbox={setLightboxImage} />
                     ))}
                 </ul>
             </main>
